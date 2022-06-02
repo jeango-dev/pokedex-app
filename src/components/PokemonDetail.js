@@ -17,13 +17,16 @@ const PokemonDetail = () => {
     );
   }, [id]);
 
-  // console.log(pokemons);
+  console.log(pokemons);
 
   return (
-    <div>
+    <div className="pokemonDetail">
       <h1>{pokemons.name}</h1>
-      <img className="imageShiny" src={pokemons.imageShiny} alt="" />
-      <img className="imageNormal" src={pokemons.image} alt="" />
+      <img className="imageShinyD" src={pokemons.imageShiny} alt="" />
+      <img className="imageNormalD" src={pokemons.image} alt="" />
+      <h2>
+        Weight{} Height{}
+      </h2>
     </div>
   );
 };
