@@ -37,7 +37,7 @@ function PokemonCard({ pokemonUrl }) {
   return (
     <div
       style={{ borderColor: ColorCard(pokemon.typeColor) }}
-      className="pokedexCard"
+      className="pokemonCard"
     >
       <div className="titleCard">
         <h3 style={{ background: ColorCard(pokemon.typeColor) }}>

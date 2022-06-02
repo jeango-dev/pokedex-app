@@ -1,3 +1,4 @@
+import "../styles/pokedex.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -67,7 +68,7 @@ const Pokemons = () => {
   // console.log(types);
 
   return (
-    <div>
+    <div className="pokedex">
       <div>
         <h1>Pokedex Shiny</h1>
         <p>Welcome {user}, here you can find your favorite shiny pokemon</p>

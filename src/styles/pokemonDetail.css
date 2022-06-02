@@ -1,20 +1,3 @@
-.imageShinyD {
-  width: 500px;
-  position: absolute;
-  float: left;
-  transition: 0.4s;
-}
-
-.imageShinyD:hover {
-  opacity: 0;
-  transition: 0.4s;
-}
-
-.imageNormalD {
-  width: 500px;
-  margin-bottom: 5px;
-}
-
 body {
   display: flex;
   justify-content: center;
@@ -31,4 +14,48 @@ body {
   border: 8px solid;
   border-top: 15px solid;
   transition: 0.5s;
+}
+
+.imageShinyD {
+  width: 400px;
+  position: absolute;
+  float: left;
+  transition: 0.4s;
+}
+
+.imageShinyD:hover {
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.imageNormalD {
+  width: 400px;
+  margin-bottom: 5px;
+}
+
+.pokemonData h1 {
+  text-transform: capitalize;
+  color: black;
+  margin: 5px;
+}
+
+.pokemonData {
+  margin: 10px;
+}
+
+progress {
+  margin: 5px;
+}
+
+.pokemonData h3 {
+  margin: 10px;
+}
+
+.pokemonData p {
+  margin: 10px;
+}
+
+.pokemonDType span {
+  font-size: 18px;
+  margin: 20px;
 }

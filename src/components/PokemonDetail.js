@@ -39,27 +39,28 @@ const PokemonDetail = () => {
       <div>
         <img className="imageShinyD" src={pokemons.imageShiny} alt="" />
         <img className="imageNormalD" src={pokemons.image} alt="" />
-        <h1>{pokemons.name}</h1>
-        <h3># {pokemons.id}</h3>
-        <h3>Weight {pokemons.weight}</h3>
-        <h3>Height {pokemons.height}</h3>
-        <h3>Type</h3>
-        <p>
-          {pokemons.type?.map((type) => {
-            return (
-              <span
-                style={{ background: ColorCard(type.type.name) }}
-                className="typeCard"
-                key={type.type.url}
-              >
-                {" "}
-                {type.type.name}{" "}
-              </span>
-            );
-          })}
-        </p>
-        <h3>Abilites</h3>
-        {/* {pokemons.abilities?.map((abilitiy) => {
+        <div className="pokemonData">
+          <h1>{pokemons.name}</h1>
+          <h3># {pokemons.id}</h3>
+          <h3>Weight {pokemons.weight}</h3>
+          <h3>Height {pokemons.height}</h3>
+          <h3>Type</h3>
+          <p className="pokemonDType">
+            {pokemons.type?.map((type) => {
+              return (
+                <span
+                  style={{ background: ColorCard(type.type.name) }}
+                  className="typeCard"
+                  key={type.type.url}
+                >
+                  {" "}
+                  {type.type.name}{" "}
+                </span>
+              );
+            })}
+          </p>
+          <h3>Abilites</h3>
+          {/* {pokemons.abilities?.map((abilitiy) => {
           return (
             <span className="abilitiyCard" key={abilitiy.abilitiy.url}>
               {" "}
@@ -67,25 +68,25 @@ const PokemonDetail = () => {
             </span>
           );
         })} */}
-      </div>
-      <div>
-        <p>
-          Hp: <progress max="100" value={pokemons.hp}></progress>
-        </p>
-        <p>
-          Speed: <progress max="100" value={pokemons.speed}></progress>
-        </p>
-        <p>
-          Attack: <progress max="100" value={pokemons.attack}></progress>
-        </p>
-        <p>
-          Defense: <progress max="100" value={pokemons.defense}></progress>
-        </p>
-      </div>
-      <div>
-        <Link to={"/pokedex"}>
-          <button>Back to the pokedex</button>
-        </Link>
+          <div>
+            <p>
+              Hp: <progress max="100" value={pokemons.hp}></progress>
+            </p>
+            <p>
+              Speed: <progress max="100" value={pokemons.speed}></progress>
+            </p>
+            <p>
+              Attack: <progress max="100" value={pokemons.attack}></progress>
+            </p>
+            <p>
+              Defense: <progress max="100" value={pokemons.defense}></progress>
+            </p>
+          </div>
+          <div></div>
+          <Link to={"/pokedex"}>
+            <button>Back to the pokedex</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

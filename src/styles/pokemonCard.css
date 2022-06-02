@@ -5,7 +5,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-.pokedexCard {
+.pokemonCard {
   display: inline-block;
   width: 100%;
   height: auto;
@@ -21,7 +21,7 @@
   transition: 0.5s;
 }
 
-.pokedexCard:hover {
+.pokemonCard:hover {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 10);
   transform: scale(1.1);
   transition: 0.4s;
@@ -48,12 +48,6 @@
   margin-bottom: 5px;
 }
 
-select {
-  display: flex;
-  margin: 10px;
-  text-transform: capitalize;
-}
-
 .titleCard h3 {
   text-transform: capitalize;
   padding-bottom: 25px;
@@ -64,33 +58,9 @@ select {
   border-bottom-left-radius: 50%;
 }
 
-input {
-  margin: 10px;
-  text-transform: capitalize;
-}
-
-button {
-  padding: 10px;
-  margin: 5px;
-  border: none;
-  border-radius: 50px;
-  background-color: #a9ddd6;
-  transition: 0.3s;
-  text-align: center;
-  align-items: center;
-}
-
-button:hover {
-  background-color: #2b59c3;
-  transition: 0.3s;
-}
-
 .descriptionCard {
   text-transform: capitalize;
   font-size: 15px;
-  background-color: blue;
-  /* border-top-right-radius: 50%;
-    border-top-left-radius: 50%; */
   padding-top: 10px;
   padding-bottom: 2px;
   margin-top: 15px;
