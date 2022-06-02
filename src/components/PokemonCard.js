@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import ColorCard from "./ColorCard";
 import { useDispatch } from "react-redux";
 import { setIsloading } from "../store/slices/isLoading.slices";
+import { Link } from "react-router-dom";
 
 function PokemonCard({ pokemonUrl }) {
   const [pokemon, setPokemon] = useState({});
@@ -43,8 +44,12 @@ function PokemonCard({ pokemonUrl }) {
           {pokemon.name} No. {pokemon.id}
         </h3>
       </div>
-      <img className="imageShiny" src={pokemon.imageShiny} alt="" />
-      <img className="imageNormal" src={pokemon.image} alt="" />
+      <div>
+        <Link to={`/pokedex/${pokemon.id}`}>
+          <img className="imageShiny" src={pokemon.imageShiny} alt="" />
+          <img className="imageNormal" src={pokemon.image} alt="" />
+        </Link>
+      </div>
       <div>
         <p>
           {pokemon.type?.map((type) => {
