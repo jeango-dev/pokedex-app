@@ -16,7 +16,7 @@ const Pokemons = () => {
 
   //Pagination
 
-  const pokemonNumbers = 10;
+  const pokemonNumbers = 8;
   const lastIndex = pokemonNumbers * page;
   const firstIndex = lastIndex - pokemonNumbers;
   const pokemonPaginated = pokemons.slice(firstIndex, lastIndex);
