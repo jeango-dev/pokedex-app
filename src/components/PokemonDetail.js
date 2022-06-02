@@ -29,7 +29,9 @@ const PokemonDetail = () => {
     );
   }, [id]);
 
-  console.log(pokemons);
+  // console.log(pokemons);
+
+  // document.body.style = `background: ${ColorCard(pokemons.typeColor)};`;
 
   return (
     <div
