@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import ColorCard from "./ColorCard";
 
 const PokemonDetail = () => {
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const PokemonDetail = () => {
     );
   }, [id]);
 
-  // console.log(pokemons);
+  console.log(pokemons.abilities?.[0]);
 
   // document.body.style = `background: ${ColorCard(pokemons.typeColor)};`;
 
@@ -61,15 +61,6 @@ const PokemonDetail = () => {
               );
             })}
           </p>
-          <h3>Abilites</h3>
-          {/* {pokemons.abilities?.map((abilitiy) => {
-          return (
-            <span className="abilitiyCard" key={abilitiy.abilitiy.url}>
-              {" "}
-              {abilitiy.abilitiy.name}{" "}
-            </span>
-          );
-        })} */}
           <div>
             <p>
               Hp: <progress max="100" value={pokemons.hp}></progress>
@@ -84,7 +75,26 @@ const PokemonDetail = () => {
               Defense: <progress max="100" value={pokemons.defense}></progress>
             </p>
           </div>
-          <div></div>
+          <div>
+            <h3>Abilites</h3>
+            {pokemons.abilities?.map((ability) => {
+              return (
+                <ul key={ability.ability.url}>
+                  <li className="abilitiyCard"> {ability.ability.name} </li>
+                </ul>
+              );
+            })}
+          </div>
+          <div>
+            <h3>Moves</h3>
+            {pokemons.moves?.map((move) => {
+              return (
+                <ul key={move.move.url}>
+                  <li className="abilitiyCard"> {move.move.name} </li>
+                </ul>
+              );
+            })}
+          </div>
           <Link to={"/pokedex"}>
             <button>Back to the pokedex</button>
           </Link>

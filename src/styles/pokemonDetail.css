@@ -47,7 +47,7 @@ progress {
 }
 
 .pokemonData h3 {
-  margin: 10px;
+  margin: 25px;
 }
 
 .pokemonData p {
@@ -57,4 +57,10 @@ progress {
 .pokemonDType span {
   font-size: 18px;
   margin: 20px;
+}
+
+.pokemonDetail ul li {
+  text-transform: capitalize;
+  list-style: none;
+  margin: 5px;
 }
