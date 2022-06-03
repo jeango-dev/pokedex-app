@@ -71,7 +71,8 @@ const Pokemons = () => {
     <div className="pokedex">
       <div>
         <h1>Pokedex Shiny</h1>
-        <p>Welcome {user}, here you can find your favorite shiny pokemon</p>
+        <h3>Welcolme {user}!</h3>
+        <p>Here you can find your favorite shiny pokemon</p>
       </div>
       <div>
         <input
@@ -83,6 +84,7 @@ const Pokemons = () => {
         <button onClick={search}>Search</button>
       </div>
       <div>
+        <h4>Select by type pokemon</h4>
         <select name="Selecet by type" onChange={filterPokemons}>
           <option value="">All pokemons</option>
           {types.map((type) => (

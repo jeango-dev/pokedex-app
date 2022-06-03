@@ -1,6 +1,15 @@
-input {
+.pokedex {
   margin: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.pokedex input {
   text-transform: capitalize;
+}
+
+.pokedex p {
+  margin: 10px;
 }
 
 button {
@@ -19,8 +28,11 @@ button:hover {
   transition: 0.3s;
 }
 
-select {
-  display: flex;
-  margin: 10px;
+.pokedex select {
+  margin: 20px;
+  text-transform: capitalize;
+}
+
+.pokedex h4 {
   text-transform: capitalize;
 }
