@@ -29,7 +29,7 @@ const PokemonDetail = () => {
     );
   }, [id]);
 
-  console.log(pokemons.abilities?.[0]);
+  // console.log(pokemons.abilities?.[0]);
 
   // document.body.style = `background: ${ColorCard(pokemons.typeColor)};`;
 
@@ -38,6 +38,9 @@ const PokemonDetail = () => {
       style={{ borderColor: ColorCard(pokemons.typeColor) }}
       className="pokemonDetail"
     >
+      <Link to={"/pokedex"}>
+        <button>Back to the pokedex</button>
+      </Link>
       <div>
         <img className="imageShinyD" src={pokemons.imageShiny} alt="" />
         <img className="imageNormalD" src={pokemons.image} alt="" />
@@ -95,9 +98,6 @@ const PokemonDetail = () => {
               );
             })}
           </div>
-          <Link to={"/pokedex"}>
-            <button>Back to the pokedex</button>
-          </Link>
         </div>
       </div>
     </div>
