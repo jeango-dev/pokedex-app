@@ -4,6 +4,11 @@
   display: flex;
 }
 
+.subnav {
+  background-color: black;
+  height: 30px;
+}
+
 .pokemon {
   display: flex;
   width: 200px;

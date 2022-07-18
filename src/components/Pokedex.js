@@ -1,4 +1,5 @@
 import '../styles/pokedex.css';
+import '../styles/pokeballNav.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -15,8 +16,21 @@ const Pokemons = () => {
   const [pokemonSearch, setPokemonSearch] = useState('');
   const [types, setTypes] = useState([]);
   const [page, setPage] = useState(1);
+  // const [colorIndex, setColorIndex] = useState(0);
 
-  //Pagination
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // const colors = ['#263547', 'white'];
+
+  // Background
+
+  // function handleChangeIndex() {
+  //   const next = colorIndex + 1 === colors.length ? 0 : colorIndex + 1;
+  //   setColorIndex(next);
+  // }
+
+  // document.body.style = `background:  ${isDark ? 'rgb(29, 27, 27)' : 'rgb(253, 253, 253)'}`
+
+  // Pagination
 
   const pokemonNumbers = 10;
   const lastIndex = pokemonNumbers * page;
@@ -42,6 +56,7 @@ const Pokemons = () => {
   console.log(pokemonPaginated);
 
   useEffect(() => {
+    // document.body.style.backgroundColor = colors[colorIndex];
     axios
       .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
       .then((res) => setPokemons(res.data.results));
@@ -69,9 +84,22 @@ const Pokemons = () => {
 
   return (
     <div className="pokedex text-center">
-      <div className="navPokedex">
-        <img className="pokemon" src={pokemon} alt="" />
+      {/* <div className="navPokedex">
+        
+        <Button onClick={handleChangeIndex}>Background</Button>
+        <div className="pokeball_nav">
+          <div className="pokeball__button_nav"></div>
+        </div>
+      </div> */}
+      {/* <div className="subnav"></div> */}
+      <div id="bg">
+        {/* <div id="circle_in"></div> */}
+        <div id="circle_1"></div>
+        <div id="line"></div>
+        <div id="circle_2"></div>
+        <div id="circle_3"></div>
       </div>
+
       <div>
         <h2>Welcolme {user}!</h2>
         <p>Here you can find your favorite shiny pokemon</p>

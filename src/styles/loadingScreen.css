@@ -61,7 +61,7 @@
     background: #eee;
   }
   to {
-    background: #e74c3c;
+    background: #dc3545;
   }
 }
 @keyframes shake {
@@ -100,7 +100,7 @@
 }
 
 .overlay {
-  background-color: #131313b9;
+  background-color: #dc3545;
   position: fixed;
   top: 0;
   left: 0;

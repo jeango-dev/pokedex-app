@@ -1,0 +1,58 @@
+#bg {
+  position: relfiative;
+  height: 200px;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background: -webkit-linear-gradient(
+    top,
+    #dc3545 48%,
+    #000 48%,
+    #000 53%,
+    #fff 53%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#circle_1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to top,
+    white 0%,
+    white 50%,
+    red 50%,
+    red 100%
+  );
+  border: 10px solid black;
+}
+
+#line {
+  position: absolute;
+  background-color: black;
+  height: 20px;
+  width: 100%;
+}
+
+#circle_2 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  border: 10px solid black;
+}
+
+#circle_3 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #dc3545;
+}
