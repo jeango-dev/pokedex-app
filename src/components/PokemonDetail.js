@@ -1,8 +1,9 @@
-import axios from "axios";
-import "../styles/pokemonDetail.css";
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import ColorCard from "./ColorCard";
+import axios from 'axios';
+import '../styles/pokemonDetail.css';
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import ColorCard from './ColorCard';
+import { ProgressBar } from 'react-bootstrap';
 
 const PokemonDetail = () => {
   const [pokemons, setPokemons] = useState({});
@@ -38,7 +39,7 @@ const PokemonDetail = () => {
       style={{ borderColor: ColorCard(pokemons.typeColor) }}
       className="pokemonDetail"
     >
-      <Link to={"/pokedex"}>
+      <Link to={'/pokedex'}>
         <button>Back to the pokedex</button>
       </Link>
       <div>
@@ -58,24 +59,51 @@ const PokemonDetail = () => {
                   className="typeCard"
                   key={type.type.url}
                 >
-                  {" "}
-                  {type.type.name}{" "}
+                  {' '}
+                  {type.type.name}{' '}
                 </span>
               );
             })}
           </p>
           <div>
             <p>
-              Hp: <progress max="100" value={pokemons.hp}></progress>
+              Hp:{' '}
+              <ProgressBar
+                style={{ height: '25px' }}
+                variant="info"
+                max="100"
+                animated
+                now={pokemons.hp}
+              ></ProgressBar>
             </p>
             <p>
-              Speed: <progress max="100" value={pokemons.speed}></progress>
+              Speed:{' '}
+              <ProgressBar
+                style={{ height: '25px' }}
+                max="100"
+                animated
+                now={pokemons.speed}
+              ></ProgressBar>
             </p>
             <p>
-              Attack: <progress max="100" value={pokemons.attack}></progress>
+              Attack:{' '}
+              <ProgressBar
+                style={{ height: '25px' }}
+                variant="danger"
+                max="100"
+                animated
+                now={pokemons.attack}
+              ></ProgressBar>
             </p>
             <p>
-              Defense: <progress max="100" value={pokemons.defense}></progress>
+              Defense:{' '}
+              <ProgressBar
+                style={{ height: '25px' }}
+                variant="warning"
+                max="100"
+                animated
+                now={pokemons.defense}
+              ></ProgressBar>
             </p>
           </div>
           <div>
@@ -88,7 +116,7 @@ const PokemonDetail = () => {
               );
             })}
           </div>
-          <div>
+          {/* <div>
             <h3>Moves</h3>
             {pokemons.moves?.map((move) => {
               return (
@@ -97,7 +125,7 @@ const PokemonDetail = () => {
                 </ul>
               );
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

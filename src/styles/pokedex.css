@@ -1,38 +1,36 @@
-.pokedex {
-  margin: 10px;
-  text-align: center;
-  align-items: center;
+.navPokedex {
+  background-color: #dc3545;
+  color: white;
+  display: flex;
 }
 
-.pokedex input {
+.pokemon {
+  display: flex;
+  width: 200px;
+  margin: 20px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: auto;
+}
+
+.search input {
   text-transform: capitalize;
+  margin: 5px;
+}
+
+.search button {
+  margin: 5px;
 }
 
 .pokedex p {
   margin: 10px;
 }
 
-button {
-  padding: 10px;
+.paginationPokedex button {
   margin: 5px;
-  border: none;
-  border-radius: 50px;
-  background-color: #a9ddd6;
-  transition: 0.3s;
-  text-align: center;
-  align-items: center;
-}
-
-button:hover {
-  background-color: #2b59c3;
-  transition: 0.3s;
-}
-
-.pokedex select {
-  margin: 20px;
-  text-transform: capitalize;
-}
-
-.pokedex h4 {
-  text-transform: capitalize;
 }

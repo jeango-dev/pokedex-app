@@ -1,77 +1,74 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-
-body {
-  background-color: white;
-}
-
 .pokemonCard {
   display: inline-block;
-  width: 100%;
   height: auto;
-  min-width: 250px;
-  max-width: 250px;
-  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 220px;
+  min-width: 220px;
   margin: 15px;
   border-radius: 15px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 5);
-  text-align: center;
-  border: 8px solid;
-  border-top: 15px solid;
-  transition: 0.5s;
+  box-shadow: 0 0 12px black;
+  transition: transform 0.5s;
 }
 
 .pokemonCard:hover {
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 10);
   transform: scale(1.1);
-  transition: 0.4s;
 }
-
-/* .pokedexCard img {
-    width: 128px;
-  } */
 
 .imageShiny {
   width: 150px;
   position: absolute;
   float: left;
-  transition: 0.4s;
+  transition: transform 0.4s;
+  transition: opacity 0.5s;
+  margin: 40px;
+  margin-bottom: 20px;
 }
 
 .imageShiny:hover {
   opacity: 0;
-  transition: 0.4s;
 }
 
 .imageNormal {
   width: 150px;
-  margin-bottom: 5px;
+  height: auto;
+  min-height: 150px;
+  margin: 40px;
+  margin-bottom: 20px;
 }
 
-.titleCard h3 {
+.nameCard {
   text-transform: capitalize;
-  padding-bottom: 25px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 12px;
+  margin-top: 10px;
+  position: absolute;
   color: white;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
+  text-align: start;
+}
+
+.numberCard {
+  width: 210px;
+  margin-top: 10px;
+  position: absolute;
+  text-align: end;
+  color: white;
+}
+
+.titleCard {
+  width: 100px;
+  height: 100px;
+  position: absolute;
 }
 
 .descriptionCard {
   text-transform: capitalize;
-  font-size: 15px;
-  padding-top: 10px;
-  padding-bottom: 2px;
-  margin-top: 15px;
-  color: white;
 }
 
-.typeCard {
+.typeContainer {
+  margin: 1px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.types {
   text-transform: capitalize;
   padding: 5px;
   padding-left: 15px;
@@ -80,5 +77,5 @@ body {
   margin-right: 5px;
   margin-left: 5px;
   color: white;
-  font-size: 12px;
+  font-size: 14px;
 }

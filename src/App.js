@@ -1,18 +1,27 @@
-import "./App.css";
-import { HashRouter, Routes, Route } from "react-router-dom";
-import PokemonDetail from "./components/PokemonDetail";
-import Pokedex from "./components/Pokedex";
-import UserInput from "./components/UserInput";
-import ProtectedRoutes from "./components/ProtectedRoutes";
-import { useSelector } from "react-redux";
-import LoadingScreen from "./components/LoadingScreen";
+import './App.css';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import PokemonDetail from './components/PokemonDetail';
+import Pokedex from './components/Pokedex';
+import UserInput from './components/UserInput';
+import ProtectedRoutes from './components/ProtectedRoutes';
+// import { useSelector } from 'react-redux';
+// import LoadingScreen from './components/LoadingScreen';
+// import { useEffect, useState } from 'react';
+// import { setIsloading } from './store/slices/isLoading.slices';
+// import { useEffect } from 'react';
 
 function App() {
-  const isLoading = useSelector((state) => state.isLoading);
+  // const isLoading = useSelector((state) => state.isLoading);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   setTimeout(() => dispatch(setIsloading(false)), 1000);
+  //   dispatch(setIsloading(true));
+  // }, [dispatch]);
 
   return (
     <HashRouter>
-      {isLoading && <LoadingScreen />}
+      {/* {loading && <LoadingScreen />} */}
       <div className="App">
         <Routes>
           <Route path="/" element={<UserInput />} />
