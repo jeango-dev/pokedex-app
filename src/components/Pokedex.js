@@ -137,13 +137,14 @@ const Pokemons = () => {
               className="text-center"
               type="text"
               value={searchPokemon}
-              // onChange={(e) => setSearchPokemon(e.target.value)}
               onChange={submit}
               placeholder="Search by Pokemon"
             />
             <Button variant="danger">
               <i className="fa-solid fa-magnifying-glass"></i>
             </Button>
+          </div>
+          <div className="select-container">
             <Form.Select className="select-pokedex" onChange={filterTypes}>
               <option value="">All pokemons</option>
               {typesPokemons.map((type) => (
