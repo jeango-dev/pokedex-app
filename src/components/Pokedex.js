@@ -1,11 +1,12 @@
 import '../styles/pokedex.css';
+import '../styles/nav.css';
 import '../styles/pokeballNav.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
-import pokemon from '../img/pokemon.webp';
+import pokeapi from '../img/pokeapi.png';
 import { Button, Form } from 'react-bootstrap';
 
 const Pokemons = () => {
@@ -44,7 +45,7 @@ const Pokemons = () => {
     if (page > 5) {
       lastPage = page;
     } else {
-      lastPage = 5;
+      lastPage = 4;
     }
   }
 
@@ -84,6 +85,10 @@ const Pokemons = () => {
 
   return (
     <div className="pokedex text-center">
+      {/* <div>
+        <div class="pokeball_nav"></div>
+      </div> */}
+
       {/* <div className="navPokedex">
         
         <Button onClick={handleChangeIndex}>Background</Button>
@@ -92,15 +97,18 @@ const Pokemons = () => {
         </div>
       </div> */}
       {/* <div className="subnav"></div> */}
+
+      <img className="pokeapi" src={pokeapi} alt="" />
       <div id="bg">
-        {/* <div id="circle_in"></div> */}
-        <div id="circle_1"></div>
-        <div id="line"></div>
-        <div id="circle_2"></div>
-        <div id="circle_3"></div>
+        <div id="circle_1">
+          <div id="line"></div>
+          <div id="line_pokeball"></div>
+          <div id="circle_2"></div>
+          <div id="circle_3"></div>
+        </div>
       </div>
 
-      <div>
+      <div className="text-center">
         <h2>Welcolme {user}!</h2>
         <p>Here you can find your favorite shiny pokemon</p>
         <div className="search mx-4">
@@ -116,7 +124,7 @@ const Pokemons = () => {
           </Button>
         </div>
       </div>
-      <div>
+      <div className="text-center">
         <h4>Select by type Pokemon</h4>
         <Form.Select name="Selecet by type" onChange={filterPokemons}>
           <option value="">All pokemons</option>

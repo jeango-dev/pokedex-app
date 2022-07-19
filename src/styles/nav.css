@@ -1,0 +1,30 @@
+#bg {
+  position: relative;
+  height: 200px;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background: -webkit-linear-gradient(
+    top,
+    #dc3545 48%,
+    #000 48%,
+    #000 53%,
+    #fff 53%
+  );
+  display: flex;
+  justify-content: center;
+}
+
+.navPokedex {
+  background-color: #dc3545;
+  color: white;
+  display: flex;
+}
+
+.pokeapi {
+  position: absolute;
+  height: 80px;
+  margin: 15px;
+}
