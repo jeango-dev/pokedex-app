@@ -4,19 +4,61 @@ import '../styles/pokeballNav.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
 // import pokeapi from '../img/pokeapi.png';
 import { Button, Form } from 'react-bootstrap';
 
 const Pokemons = () => {
-  const user = useSelector((state) => state.user);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
+  const user = useSelector((state) => state.user);
   const [pokemons, setPokemons] = useState([]);
-  const [pokemonSearch, setPokemonSearch] = useState('');
-  const [types, setTypes] = useState([]);
+  const [searchPokemon, setSearchPokemon] = useState('');
+  const [pokemonsTable, setPokemonsTable] = useState([]);
+  const [typesPokemons, setTypesPokemons] = useState([]);
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    // document.body.style.backgroundColor = colors[colorIndex];
+    axios
+      .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
+      .then((res) => {
+        setPokemons(res.data.results);
+        setPokemonsTable(res.data.results);
+      });
+    axios
+      .get(`https://pokeapi.co/api/v2/type/`)
+      .then((res) => setTypesPokemons(res.data.results));
+  }, []);
+
+  const submit = (e) => {
+    setSearchPokemon(e.target.value);
+    search(e.target.value);
+  };
+
+  const search = (SearchType) => {
+    const resultSearch = pokemonsTable.filter((element) => {
+      if (element.name.toString().includes(SearchType.toString())) {
+        return element;
+      }
+    });
+    setPage(1);
+    setPokemons(resultSearch);
+  };
+
+  console.log(search);
+
+  const filterTypes = (e) => {
+    if (e.target.value !== '') {
+      axios.get(e.target.value).then((res) => setPokemons(res.data.pokemon));
+    } else {
+      axios
+        .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
+        .then((res) => setPokemons(res.data.results));
+    }
+  };
+
   // const [colorIndex, setColorIndex] = useState(0);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,8 +79,7 @@ const Pokemons = () => {
   const lastIndex = pokemonNumbers * page;
   const firstIndex = lastIndex - pokemonNumbers;
   const pokemonPaginated = pokemons.slice(firstIndex, lastIndex);
-
-  let totalPages = Math.ceil(pokemons.length / pokemonNumbers);
+  const totalPages = Math.ceil(pokemons.length / pokemonNumbers);
 
   let initialPage = page < 5 ? 1 : page - 4;
   let lastPage = totalPages;
@@ -55,34 +96,17 @@ const Pokemons = () => {
     pageNumbers.push(i);
   }
 
-  console.log(pokemonPaginated);
+  // console.log(pokemonPaginated);
 
-  useEffect(() => {
-    // document.body.style.backgroundColor = colors[colorIndex];
-    axios
-      .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
-      .then((res) => setPokemons(res.data.results));
-    axios
-      .get(`https://pokeapi.co/api/v2/type/`)
-      .then((res) => setTypes(res.data.results));
-  }, []);
-  const search = () => {
-    // console.log(pokemonSearch);
-    navigate(`/pokedex/${pokemonSearch}`);
-  };
-
-  const filterPokemons = (e) => {
-    if (e.target.value !== '') {
-      axios.get(e.target.value).then((res) => setPokemons(res.data.pokemon));
-    } else {
-      axios
-        .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
-        .then((res) => setPokemons(res.data.results));
-    }
-  };
+  // const submit = (e) => {
+  //   console.log(searchPokemon);
+  //   navigate(`/pokedex/${searchPokemon}`);
+  //   setSearchPokemon(e.target.value);
+  //   filterTypes(e.target.value);
+  // };
 
   // console.log(pokemons);
-  // console.log(types);
+  // console.log(typesPokemons);
 
   return (
     <>
@@ -107,21 +131,22 @@ const Pokemons = () => {
         </div>
 
         <div className="text-center">
-          <h2>Welcolme {user}!</h2>
-          <div className="search mx-4">
+          <h2>Welcolme {user}</h2>
+          <div className="search">
             <Form.Control
               className="text-center"
               type="text"
-              value={pokemonSearch}
-              onChange={(e) => setPokemonSearch(e.target.value)}
+              value={searchPokemon}
+              // onChange={(e) => setSearchPokemon(e.target.value)}
+              onChange={submit}
               placeholder="Search by Pokemon"
             />
-            <Button variant="danger" onClick={search}>
-              <i class="fa-solid fa-magnifying-glass"></i>
+            <Button variant="danger">
+              <i className="fa-solid fa-magnifying-glass"></i>
             </Button>
-            <Form.Select className="select-pokedex" onChange={filterPokemons}>
+            <Form.Select className="select-pokedex" onChange={filterTypes}>
               <option value="">All pokemons</option>
-              {types.map((type) => (
+              {typesPokemons.map((type) => (
                 <option key={type.name} value={type.url}>
                   {type.name}
                 </option>
