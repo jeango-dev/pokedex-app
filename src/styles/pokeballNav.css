@@ -1,5 +1,5 @@
 #circle_1 {
-  /* animation: spin 10s linear infinite; */
+  /* animation: spin 3s linear infinite; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,11 +47,11 @@
   opacity: 0;
 }
 
-/* @keyframes spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-} */
+}

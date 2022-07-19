@@ -15,10 +15,15 @@
 .search input {
   text-transform: capitalize;
   margin: 5px;
+  max-width: 300px;
 }
 
 .search button {
   margin: 5px;
+}
+
+.select-pokedex {
+  max-width: 300px;
 }
 
 .pokedex p {
@@ -26,5 +31,5 @@
 }
 
 .paginationPokedex button {
-  margin: 4px;
+  margin: 5px;
 }

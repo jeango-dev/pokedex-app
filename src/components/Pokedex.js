@@ -37,7 +37,8 @@ const Pokemons = () => {
   const lastIndex = pokemonNumbers * page;
   const firstIndex = lastIndex - pokemonNumbers;
   const pokemonPaginated = pokemons.slice(firstIndex, lastIndex);
-  const totalPages = Math.ceil(pokemons.length / pokemonNumbers);
+
+  let totalPages = Math.ceil(pokemons.length / pokemonNumbers);
 
   let initialPage = page < 5 ? 1 : page - 4;
   let lastPage = totalPages;
@@ -45,7 +46,7 @@ const Pokemons = () => {
     if (page > 5) {
       lastPage = page;
     } else {
-      lastPage = 4;
+      lastPage = 5;
     }
   }
 
@@ -84,66 +85,109 @@ const Pokemons = () => {
   // console.log(types);
 
   return (
-    <div className="pokedex text-center">
-      {/* <div>
-        <div class="pokeball_nav"></div>
-      </div> */}
-
-      {/* <div className="navPokedex">
-        
-        <Button onClick={handleChangeIndex}>Background</Button>
-        <div className="pokeball_nav">
-          <div className="pokeball__button_nav"></div>
-        </div>
-      </div> */}
-      {/* <div className="subnav"></div> */}
-
-      {/* <img className="pokeapi" src={pokeapi} alt="" /> */}
-      <div id="bg">
-        <div id="circle_1">
-          <div id="line"></div>
-          <div id="line_pokeball"></div>
-          <div id="circle_2"></div>
-          <div id="circle_3"></div>
-        </div>
+    <>
+      <div className="pokedex text-center">
+        {/* <div className="navPokedex">
+      
+      <Button onClick={handleChangeIndex}>Background</Button>
+      <div className="pokeball_nav">
+        <div className="pokeball__button_nav"></div>
       </div>
+    </div> */}
+        {/* <div className="subnav"></div> */}
 
-      <div className="text-center">
-        <h2>Welcolme {user}!</h2>
-        <p>Here you can find your favorite shiny pokemon</p>
-        <div className="search mx-4">
-          <Form.Control
-            className="text-center"
-            type="text"
-            value={pokemonSearch}
-            onChange={(e) => setPokemonSearch(e.target.value)}
-            placeholder="Search by Pokemon"
-          />
-          <Button variant="danger" onClick={search}>
-            Search
-          </Button>
+        {/* <img className="pokeapi" src={pokeapi} alt="" /> */}
+        <div id="bg">
+          <div id="circle_1">
+            <div id="line"></div>
+            <div id="line_pokeball"></div>
+            <div id="circle_2"></div>
+            <div id="circle_3"></div>
+          </div>
         </div>
-      </div>
-      <div className="text-center">
-        <h4>Select by type Pokemon</h4>
-        <Form.Select name="Selecet by type" onChange={filterPokemons}>
-          <option value="">All pokemons</option>
-          {types.map((type) => (
-            <option key={type.name} value={type.url}>
-              {type.name}
-            </option>
-          ))}
-        </Form.Select>
+
+        <div className="text-center">
+          <h2>Welcolme {user}!</h2>
+          <div className="search mx-4">
+            <Form.Control
+              className="text-center"
+              type="text"
+              value={pokemonSearch}
+              onChange={(e) => setPokemonSearch(e.target.value)}
+              placeholder="Search by Pokemon"
+            />
+            <Button variant="danger" onClick={search}>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </Button>
+            <Form.Select className="select-pokedex" onChange={filterPokemons}>
+              <option value="">All pokemons</option>
+              {types.map((type) => (
+                <option key={type.name} value={type.url}>
+                  {type.name}
+                </option>
+              ))}
+            </Form.Select>
+          </div>
+        </div>
+        <div className="text-center">
+          <div className="paginationPokedex">
+            <Button
+              variant="danger"
+              onClick={() => setPage(page - 1)}
+              disabled={page === 1}
+            >
+              <i className="fas fa-chevron-left"></i>
+            </Button>
+            {pageNumbers.map((number) => (
+              <Button
+                active={page === number}
+                variant="outline-success"
+                key={number}
+                onClick={() => setPage(number)}
+              >
+                {number}
+              </Button>
+            ))}
+            <Button
+              variant="danger"
+              onClick={() => setPage(page + 1)}
+              disabled={page === totalPages}
+            >
+              <i className="fas fa-chevron-right"></i>
+            </Button>
+          </div>
+          <div>
+            {pokemonPaginated.map(
+              (
+                pokemon // En este caso pokemon puede ser o un objeto o un string "url"
+              ) => (
+                <PokemonCard
+                  key={
+                    pokemon.url !== undefined
+                      ? pokemon.url
+                      : pokemon.pokemon.url
+                  }
+                  pokemonUrl={
+                    pokemon.url !== undefined
+                      ? pokemon.url
+                      : pokemon.pokemon.url
+                  }
+                />
+              )
+            )}
+          </div>
+        </div>
         <div className="paginationPokedex">
           <Button
             variant="danger"
             onClick={() => setPage(page - 1)}
             disabled={page === 1}
           >
-            Prev
+            <i className="fas fa-chevron-left"></i>
           </Button>
           {pageNumbers.map((number) => (
             <Button
+              active={page === number}
               variant="outline-success"
               key={number}
               onClick={() => setPage(number)}
@@ -156,52 +200,11 @@ const Pokemons = () => {
             onClick={() => setPage(page + 1)}
             disabled={page === totalPages}
           >
-            Next
+            <i className="fas fa-chevron-right"></i>
           </Button>
         </div>
-        <div>
-          {pokemonPaginated.map(
-            (
-              pokemon // En este caso pokemon puede ser o un objeto o un string "url"
-            ) => (
-              <PokemonCard
-                key={
-                  pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url
-                }
-                pokemonUrl={
-                  pokemon.url !== undefined ? pokemon.url : pokemon.pokemon.url
-                }
-              />
-            )
-          )}
-        </div>
       </div>
-      <div className="paginationPokedex">
-        <Button
-          variant="danger"
-          onClick={() => setPage(page - 1)}
-          disabled={page === 1}
-        >
-          Prev
-        </Button>
-        {pageNumbers.map((number) => (
-          <Button
-            variant="outline-success"
-            key={number}
-            onClick={() => setPage(number)}
-          >
-            {number}
-          </Button>
-        ))}
-        <Button
-          variant="danger"
-          onClick={() => setPage(page + 1)}
-          disabled={page === totalPages}
-        >
-          Next
-        </Button>
-      </div>
-    </div>
+    </>
   );
 };
 

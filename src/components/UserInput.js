@@ -1,9 +1,9 @@
+import '../styles/userInput.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { changeUser } from '../store/slices/user.slice';
 import { useDispatch } from 'react-redux';
-import trainer from '../img/trainer.webp';
-import { Button } from 'react-bootstrap';
+import pokemons from '../img/pokemons.png';
 
 const PokemonInput = () => {
   const [userName, setUserName] = useState('');
@@ -17,21 +17,23 @@ const PokemonInput = () => {
   };
 
   return (
-    <div className="vh-100 row text-center align-items-center justify-content-center">
+    <div
+      style={{ backgroundColor: '#dc3545', color: 'white' }}
+      className="container-user vh-100 row text-center align-items-center justify-content-center"
+    >
       <div>
         <h1>Hello Trainer!</h1>
-      </div>
-      <div>
-        <img style={{ height: '250px' }} src={trainer} alt="trainer" />
-      </div>
-      <div>
+        <img style={{ width: '300px' }} src={pokemons} alt="" />
         <h4>Give me your name to start</h4>
         <input
+          className="user-input"
           type="text"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
-        <Button onClick={getName}>Enviar</Button>
+        <button className="user-btn" onClick={getName}>
+          <i className="fas fa-xl fa-paper-plane"></i>
+        </button>
       </div>
     </div>
   );

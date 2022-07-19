@@ -1,0 +1,33 @@
+/* body {
+  background-image: linear-gradient(
+    to right top,
+    #dc3545,
+    #dc3545,
+    #dc3545,
+    #dc3545,
+    #dc3545
+  );
+} */
+
+.container-user {
+  width: 100vh;
+}
+
+.user-input {
+  border-radius: 10px;
+  outline: 0;
+  border: none;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  text-transform: capitalize;
+  margin: 5px;
+}
+
+.user-btn {
+  margin: 5px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
