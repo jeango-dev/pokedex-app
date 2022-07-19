@@ -4,6 +4,15 @@
   margin: 20px;
 }
 
+.user-container {
+  margin: 10px;
+}
+
+.user-pokedex {
+  color: #dc3545;
+  text-transform: uppercase;
+}
+
 .search {
   display: flex;
   justify-content: center;

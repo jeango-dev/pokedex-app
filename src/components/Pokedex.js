@@ -131,7 +131,9 @@ const Pokemons = () => {
         </div>
 
         <div className="text-center">
-          <h2>Welcolme {user}</h2>
+          <h2 className="user-container">
+            Welcolme <span className="user-pokedex">{user}</span>
+          </h2>
           <div className="search">
             <Form.Control
               className="text-center"
@@ -140,7 +142,7 @@ const Pokemons = () => {
               onChange={submit}
               placeholder="Search by Pokemon"
             />
-            <Button variant="danger">
+            <Button disabled variant="danger">
               <i className="fa-solid fa-magnifying-glass"></i>
             </Button>
           </div>
