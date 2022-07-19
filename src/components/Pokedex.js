@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
-import pokeapi from '../img/pokeapi.png';
+// import pokeapi from '../img/pokeapi.png';
 import { Button, Form } from 'react-bootstrap';
 
 const Pokemons = () => {
@@ -98,7 +98,7 @@ const Pokemons = () => {
       </div> */}
       {/* <div className="subnav"></div> */}
 
-      <img className="pokeapi" src={pokeapi} alt="" />
+      {/* <img className="pokeapi" src={pokeapi} alt="" /> */}
       <div id="bg">
         <div id="circle_1">
           <div id="line"></div>
