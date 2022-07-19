@@ -38,6 +38,7 @@ const Pokemons = () => {
   };
 
   const search = (SearchType) => {
+    // eslint-disable-next-line array-callback-return
     const resultSearch = pokemonsTable.filter((element) => {
       if (element.name.toString().includes(SearchType.toString())) {
         return element;

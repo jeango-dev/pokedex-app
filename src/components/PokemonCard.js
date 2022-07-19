@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import ColorCard from './ColorCard';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import LoadingScreen from './LoadingScreen';
+// import LoadingScreen from './LoadingScreen';
 
 function PokemonCard({ pokemonUrl }) {
   const [pokemon, setPokemon] = useState({});
