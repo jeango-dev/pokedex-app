@@ -10,8 +10,8 @@
 } */
 
 .container-user {
-  width: 100vh;
-  height: 100vh;
+  width: 120%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -18,10 +18,7 @@ const PokemonInput = () => {
   };
 
   return (
-    <div
-      // style={{ backgroundColor: '#dc3545', color: 'white' }}
-      className="container-user row text-center align-items-center justify-content-center"
-    >
+    <div className="container-user row text-center align-items-center justify-content-center">
       <div>
         <div className="nav-container">
           <img className="user-image" src={pokemon} alt="" />
