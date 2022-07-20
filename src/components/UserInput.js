@@ -23,7 +23,7 @@ const PokemonInput = () => {
     >
       <div>
         <h1>Hello Trainer!</h1>
-        <img style={{ width: '300px' }} src={pokemons} alt="" />
+        <img className="user-image" src={pokemons} alt="" />
         <h4>Give me your name to start</h4>
         <input
           className="user-input"

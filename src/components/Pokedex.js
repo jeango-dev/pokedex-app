@@ -4,14 +4,11 @@ import '../styles/pokeballNav.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
-// import pokeapi from '../img/pokeapi.png';
+import pokemon from '../img/pokemon.webp';
 import { Button, Form } from 'react-bootstrap';
 
 const Pokemons = () => {
-  // const navigate = useNavigate();
-
   const user = useSelector((state) => state.user);
   const [pokemons, setPokemons] = useState([]);
   const [searchPokemon, setSearchPokemon] = useState('');
@@ -98,14 +95,6 @@ const Pokemons = () => {
   }
 
   // console.log(pokemonPaginated);
-
-  // const submit = (e) => {
-  //   console.log(searchPokemon);
-  //   navigate(`/pokedex/${searchPokemon}`);
-  //   setSearchPokemon(e.target.value);
-  //   filterTypes(e.target.value);
-  // };
-
   // console.log(pokemons);
   // console.log(typesPokemons);
 
@@ -114,21 +103,21 @@ const Pokemons = () => {
       <div className="pokedex text-center">
         {/* <div className="navPokedex">
       
-      <Button onClick={handleChangeIndex}>Background</Button>
-      <div className="pokeball_nav">
-        <div className="pokeball__button_nav"></div>
-      </div>
-    </div> */}
+        <Button onClick={handleChangeIndex}>Background</Button>
+        <div className="pokeball_nav">
+          <div className="pokeball__button_nav"></div>
+        </div>
+        </div> */}
         {/* <div className="subnav"></div> */}
-
-        {/* <img className="pokeapi" src={pokeapi} alt="" /> */}
+        <div className="nav"></div>
         <div id="bg">
-          <div id="circle_1">
+          {/* <div id="circle_1">
             <div id="line"></div>
             <div id="line_pokeball"></div>
             <div id="circle_2"></div>
             <div id="circle_3"></div>
-          </div>
+          </div> */}
+          <img className="pokeapi" src={pokemon} alt="" />
         </div>
 
         <div className="text-center">

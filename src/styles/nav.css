@@ -1,6 +1,6 @@
 #bg {
-  position: relative;
-  height: 200px;
+  position: absolute;
+  height: 120px;
   top: 0px;
   bottom: 0;
   left: 0;
@@ -8,13 +8,21 @@
   z-index: 0;
   background: -webkit-linear-gradient(
     top,
-    #dc3545 48%,
-    #000 48%,
-    #000 53%,
+    #dc3545 46%,
+    #000 46%,
+    #000 55%,
     #fff 53%
   );
-  display: flex;
+  /* display: flex;
   justify-content: center;
+  align-items: center; */
+}
+
+.nav {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  height: 120px;
 }
 
 .navPokedex {
@@ -24,7 +32,8 @@
 }
 
 .pokeapi {
-  position: absolute;
-  height: 80px;
+  height: auto;
+  max-width: 250px;
   margin: 15px;
+  width: auto;
 }
