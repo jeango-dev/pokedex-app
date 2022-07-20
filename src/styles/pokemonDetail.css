@@ -1,21 +1,29 @@
-body {
+.detail-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .pokemonDetail {
-  width: 100vh;
-  height: auto;
-  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
   border-radius: 15px;
   box-shadow: 1px 3px 10px rgba(0, 0, 0, 1);
   text-align: center;
-  border: 15px solid;
+  border: 10px solid;
+}
+
+.btn-back {
+  padding: 8px 12px;
+  border-radius: 50%;
+  border: none;
+  outline: 0;
+  background-color: #dc3545;
+  cursor: pointer;
+  color: white;
 }
 
 .imageShinyD {
-  width: 400px;
+  width: 350px;
   position: absolute;
   float: left;
   transition: 0.4s;
@@ -28,7 +36,7 @@ body {
 }
 
 .imageNormalD {
-  width: 400px;
+  width: 350px;
   margin-bottom: 5px;
 }
 
@@ -63,4 +71,22 @@ progress {
   text-transform: capitalize;
   list-style: none;
   margin: 5px;
+}
+
+.typeContainer {
+  margin: 1px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.types {
+  text-transform: capitalize;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: white;
+  font-size: 14px;
 }

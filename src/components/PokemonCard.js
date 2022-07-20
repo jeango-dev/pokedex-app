@@ -3,10 +3,11 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ColorCard from './ColorCard';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import Modal from 'react-bootstrap/Modal';
 
 function PokemonCard({ pokemonUrl }) {
   const [pokemon, setPokemon] = useState({});
+  const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -29,10 +30,14 @@ function PokemonCard({ pokemonUrl }) {
   // console.log(pokemonUrl);
   // console.log(pokemon);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div className="d-inline">
       <div
         style={{
+          borderColor: ColorCard(pokemon.typeColor),
           background: `linear-gradient(to top, white 0%,
             white 50%, ${ColorCard(pokemon.typeColor)} 50%, ${ColorCard(
             pokemon.typeColor
@@ -45,10 +50,15 @@ function PokemonCard({ pokemonUrl }) {
             <h5>#{pokemon.id}</h5>
           </div>
         </div>
-        <Link to={`/pokedex/${pokemon.id}`}>
-          <img className="imageShiny" src={pokemon.imageShiny} alt={''} />
-          <img className="imageNormal" src={pokemon.image} alt={''} />
-        </Link>
+        {/* <Link to={`/pokedex/${pokemon.id}`}> */}
+        <img
+          onClick={handleShow}
+          className="imageShiny"
+          src={pokemon.imageShiny}
+          alt={''}
+        />
+        <img className="imageNormal" src={pokemon.image} alt={''} />
+        {/* </Link> */}
         <div className="nameCard">
           <h5>{pokemon.name}</h5>
         </div>
@@ -70,6 +80,64 @@ function PokemonCard({ pokemonUrl }) {
           </p>
         </div>
       </div>
+      <>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <div className="nameCard">
+                <h5>{pokemon.name}</h5>
+              </div>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body
+            style={{
+              borderColor: ColorCard(pokemon.typeColor),
+              background: `linear-gradient(to top, white 0%,
+            white 50%, ${ColorCard(pokemon.typeColor)} 50%, ${ColorCard(
+                pokemon.typeColor
+              )} 100%)`,
+            }}
+          >
+            <div>
+              <div className="titleCard">
+                {/* <div className="numberCard">
+                  <h5>#{pokemon.id}</h5>
+                </div> */}
+              </div>
+              <div className="image-modal-container">
+                <img
+                  className="imageShiny-modal"
+                  src={pokemon.imageShiny}
+                  alt={''}
+                />
+                <img className="imageNormal-modal" src={pokemon.image} alt="" />
+              </div>
+
+              {/* <div className="nameCard">
+                <h5>{pokemon.name}</h5>
+              </div> */}
+              <div className="typeContainer">
+                <p>
+                  {pokemon.type?.map((type) => {
+                    return (
+                      <span
+                        style={{
+                          background: ColorCard(type.type.name),
+                        }}
+                        className="types"
+                        key={type.type.url}
+                      >
+                        {type.type.name}
+                      </span>
+                    );
+                  })}
+                </p>
+              </div>
+            </div>
+          </Modal.Body>
+          <Modal.Footer></Modal.Footer>
+        </Modal>
+      </>
     </div>
   );
 }

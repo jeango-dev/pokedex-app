@@ -7,6 +7,7 @@
   border-radius: 15px;
   box-shadow: 0 0 12px;
   transition: transform 0.5s;
+  border: 3px solid;
 }
 
 .pokemonCard:hover {
@@ -20,6 +21,7 @@
   transition: transform 0.4s;
   transition: opacity 0.5s;
   margin: 20px;
+  cursor: pointer;
 }
 
 .imageShiny:hover {
@@ -35,11 +37,6 @@
 
 .nameCard {
   text-transform: capitalize;
-  /* margin-left: 12px; */
-  /* margin-top: 10px; */
-  /* position: absolute; */
-  /* color: white; */
-  /* text-align: start; */
 }
 
 .numberCard {
@@ -60,13 +57,13 @@
   text-transform: capitalize;
 }
 
-.typeContainer {
+.type-xontainer {
   margin: 1px 0;
   display: flex;
   justify-content: center;
 }
 
-.types {
+.types-detail {
   text-transform: capitalize;
   padding: 5px;
   padding-left: 15px;
@@ -76,4 +73,30 @@
   margin-left: 5px;
   color: white;
   font-size: 14px;
+}
+
+image-modal-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.imageShiny-modal {
+  width: 300px;
+  position: absolute;
+  float: left;
+  transition: transform 0.4s;
+  transition: opacity 0.5s;
+
+  cursor: pointer;
+}
+
+.imageShiny-modal:hover {
+  opacity: 0;
+}
+
+.imageNormal-modal {
+  width: 300px;
+  height: auto;
+  min-height: 150px;
 }

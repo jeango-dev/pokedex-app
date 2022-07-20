@@ -122,9 +122,11 @@ const Pokemons = () => {
 
         <div className="text-center">
           <h2 className="user-container">
-            Welcolme <span className="user-pokedex">{user}</span>, here you can
-            find your favorite <span className="user-pokedex">Pokemon</span>
+            Welcolme <span className="user-pokedex">{user}</span>
           </h2>
+          <h5>
+            Find your favorite <span className="user-pokedex">pokemon</span>
+          </h5>
 
           <div className="search">
             <Form.Control
