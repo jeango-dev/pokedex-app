@@ -1,7 +1,6 @@
-.pokemon {
-  display: flex;
-  width: 200px;
-  margin: 20px;
+.pokedex {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .user-container {
@@ -10,7 +9,7 @@
 
 .user-pokedex {
   color: #dc3545;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .search {
@@ -37,10 +36,6 @@
 
 .select-pokedex {
   max-width: 300px;
-}
-
-.pokedex p {
-  margin: 10px;
 }
 
 .paginationPokedex button {

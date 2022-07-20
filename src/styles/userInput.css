@@ -10,16 +10,38 @@
 } */
 
 .container-user {
-  width: 110%;
+  width: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
 }
 
+.nav-container {
+  background: -webkit-linear-gradient(
+    top,
+    #dc3545 46%,
+    #000 46%,
+    #000 55%,
+    #fff 53%
+  );
+}
+
 .user-image {
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  max-width: 250px;
+}
+
+.user-image2 {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+}
+
+.title-trainer {
+  color: #dc3545;
+  font-style: normal;
 }
 
 .user-input {
@@ -35,8 +57,9 @@
 }
 
 .user-btn {
+  padding: 8px;
   margin: 5px;
-  border-radius: 10px;
+  border-radius: 50%;
   border: none;
   background-color: transparent;
   color: white;

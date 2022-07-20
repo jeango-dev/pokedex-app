@@ -4,15 +4,12 @@ import React, { useEffect, useState } from 'react';
 import ColorCard from './ColorCard';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import LoadingScreen from './LoadingScreen';
 
 function PokemonCard({ pokemonUrl }) {
   const [pokemon, setPokemon] = useState({});
-  // const [loading, setLoading] = useState(true);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   useEffect(() => {
-    // setLoading(true);
     axios.get(pokemonUrl).then((res) =>
       setPokemon({
         name: res.data.name,
@@ -27,7 +24,6 @@ function PokemonCard({ pokemonUrl }) {
         typeColor: res.data.types[0].type.name,
       })
     );
-    // setTimeout(() => setLoading(), 1200);
   }, [dispatch, pokemonUrl]);
 
   // console.log(pokemonUrl);
@@ -35,9 +31,6 @@ function PokemonCard({ pokemonUrl }) {
 
   return (
     <div className="d-inline">
-      {/* {loading ? (
-        <LoadingScreen />
-      ) : ( */}
       <div
         style={{
           background: `linear-gradient(to top, white 0%,
@@ -77,7 +70,6 @@ function PokemonCard({ pokemonUrl }) {
           </p>
         </div>
       </div>
-      {/* )} */}
     </div>
   );
 }

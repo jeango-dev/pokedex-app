@@ -81,7 +81,7 @@ const Pokemons = () => {
 
   // Pagination
 
-  const pokemonNumbers = 10;
+  const pokemonNumbers = 8;
   const lastIndex = pokemonNumbers * page;
   const firstIndex = lastIndex - pokemonNumbers;
   const pokemonPaginated = pokemons.slice(firstIndex, lastIndex);
@@ -109,14 +109,6 @@ const Pokemons = () => {
   return (
     <>
       <div className="pokedex text-center">
-        {/* <div className="navPokedex">
-      
-        <Button onClick={handleChangeIndex}>Background</Button>
-        <div className="pokeball_nav">
-          <div className="pokeball__button_nav"></div>
-        </div>
-        </div> */}
-        {/* <div className="subnav"></div> */}
         <div className="nav"></div>
         <div id="bg">
           {/* <div id="circle_1">
@@ -130,15 +122,17 @@ const Pokemons = () => {
 
         <div className="text-center">
           <h2 className="user-container">
-            Welcolme <span className="user-pokedex">{user}</span>
+            Welcolme <span className="user-pokedex">{user}</span>, here you can
+            find your favorite <span className="user-pokedex">Pokemon</span>
           </h2>
+
           <div className="search">
             <Form.Control
               className="text-center"
               type="text"
               value={searchPokemon}
               onChange={submit}
-              placeholder="Search by Pokemon"
+              placeholder="Search Pokemon"
             />
             <Button disabled variant="danger">
               <i className="fa-solid fa-magnifying-glass"></i>
@@ -185,7 +179,7 @@ const Pokemons = () => {
           {loading ? (
             <LoadingScreen />
           ) : (
-            <div>
+            <div clasName="pokedex-container">
               {pokemonPaginated.map((pokemon) => {
                 return (
                   <PokemonCard
