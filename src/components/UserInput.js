@@ -18,8 +18,8 @@ const PokemonInput = () => {
   };
 
   return (
-    <div className="container-user row text-center align-items-center justify-content-center">
-      <div>
+    <div className="container-user row xl text-center align-items-center justify-content-center">
+      <div className="col">
         <div className="nav-container">
           <img className="user-image" src={pokemon} alt="" />
         </div>
