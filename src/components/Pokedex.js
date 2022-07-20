@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import PokemonCard from './PokemonCard';
 import pokemon from '../img/pokemon.webp';
 import { Button, Form } from 'react-bootstrap';
+import LoadingScreen from './LoadingScreen';
 
 const Pokemons = () => {
   const user = useSelector((state) => state.user);
@@ -14,10 +15,12 @@ const Pokemons = () => {
   const [searchPokemon, setSearchPokemon] = useState('');
   const [pokemonsTable, setPokemonsTable] = useState([]);
   const [typesPokemons, setTypesPokemons] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
     // document.body.style.backgroundColor = colors[colorIndex];
+    setLoading(true);
     axios
       .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
       .then((res) => {
@@ -27,6 +30,7 @@ const Pokemons = () => {
     axios
       .get(`https://pokeapi.co/api/v2/type/`)
       .then((res) => setTypesPokemons(res.data.results));
+    setTimeout(() => setLoading(), 1200);
   }, []);
 
   const submit = (e) => {
@@ -49,11 +53,15 @@ const Pokemons = () => {
 
   const filterTypes = (e) => {
     if (e.target.value !== '') {
+      setLoading(true);
       axios.get(e.target.value).then((res) => setPokemons(res.data.pokemon));
+      setTimeout(() => setLoading(), 1200);
     } else {
+      setLoading(true);
       axios
         .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
         .then((res) => setPokemons(res.data.results));
+      setTimeout(() => setLoading(), 1200);
     }
   };
 
@@ -132,7 +140,7 @@ const Pokemons = () => {
               onChange={submit}
               placeholder="Search by Pokemon"
             />
-            <Button disabled variant="danger">
+            <Button onclick={submit} variant="danger">
               <i className="fa-solid fa-magnifying-glass"></i>
             </Button>
           </div>
@@ -174,26 +182,28 @@ const Pokemons = () => {
               <i className="fas fa-chevron-right"></i>
             </Button>
           </div>
-          <div>
-            {pokemonPaginated.map(
-              (
-                pokemon // En este caso pokemon puede ser o un objeto o un string "url"
-              ) => (
-                <PokemonCard
-                  key={
-                    pokemon.url !== undefined
-                      ? pokemon.url
-                      : pokemon.pokemon.url
-                  }
-                  pokemonUrl={
-                    pokemon.url !== undefined
-                      ? pokemon.url
-                      : pokemon.pokemon.url
-                  }
-                />
-              )
-            )}
-          </div>
+          {loading ? (
+            <LoadingScreen />
+          ) : (
+            <div>
+              {pokemonPaginated.map((pokemon) => {
+                return (
+                  <PokemonCard
+                    key={
+                      pokemon.url !== undefined
+                        ? pokemon.url
+                        : pokemon.pokemon.url
+                    }
+                    pokemonUrl={
+                      pokemon.url !== undefined
+                        ? pokemon.url
+                        : pokemon.pokemon.url
+                    }
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
         <div className="paginationPokedex">
           <Button

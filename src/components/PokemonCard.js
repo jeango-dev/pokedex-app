@@ -27,7 +27,7 @@ function PokemonCard({ pokemonUrl }) {
         typeColor: res.data.types[0].type.name,
       })
     );
-    // setTimeout(() => setLoading(false), 1200);
+    // setTimeout(() => setLoading(), 1200);
   }, [dispatch, pokemonUrl]);
 
   // console.log(pokemonUrl);
@@ -35,9 +35,9 @@ function PokemonCard({ pokemonUrl }) {
 
   return (
     <div className="d-inline">
-      {/* {loading ? ( */}
-      {/* <LoadingScreen /> */}
-      {/* ) : ( */}
+      {/* {loading ? (
+        <LoadingScreen />
+      ) : ( */}
       <div
         style={{
           background: `linear-gradient(to top, white 0%,
