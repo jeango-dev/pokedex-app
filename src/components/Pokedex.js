@@ -140,7 +140,7 @@ const Pokemons = () => {
               onChange={submit}
               placeholder="Search by Pokemon"
             />
-            <Button onclick={submit} variant="danger">
+            <Button disabled variant="danger">
               <i className="fa-solid fa-magnifying-glass"></i>
             </Button>
           </div>
