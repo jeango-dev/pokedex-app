@@ -32,7 +32,7 @@ const PokemonInput = () => {
           src="https://sergiofrancodev.com/pokeball.gif"
           alt=""
         />
-        <h2 className="title-trainer">Hello Trainer</h2>
+        <h2 className="title-trainer">Hello Master Pokemon</h2>
         <input
           style={{ backgroundColor: '#dc3545', color: 'white' }}
           className="user-input"
