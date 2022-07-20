@@ -16,15 +16,13 @@
 .search {
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: auto;
 }
 
 .search input {
   text-transform: capitalize;
   margin: 5px;
-  max-width: 300px;
+  width: 75%;
+  max-width: 250px;
 }
 
 .search button {
