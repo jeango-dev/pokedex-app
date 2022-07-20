@@ -41,7 +41,6 @@
 
 .title-trainer {
   color: #dc3545;
-  font-style: normal;
 }
 
 .user-input {
@@ -54,6 +53,10 @@
   text-transform: capitalize;
   margin: 5px;
   width: 250px;
+}
+
+.container-user input::placeholder {
+  color: white;
 }
 
 .user-btn {

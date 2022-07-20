@@ -33,13 +33,13 @@ const PokemonInput = () => {
           alt=""
         />
         <h2 className="title-trainer">Hello Master Pokemon</h2>
-        <h4>Give me your name to start</h4>
         <input
           style={{ backgroundColor: '#dc3545', color: 'white' }}
           className="user-input"
           type="text"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
+          placeholder="Enter your name"
         />
         <button
           style={{ backgroundColor: '#dc3545', color: 'white' }}
