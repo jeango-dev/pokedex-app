@@ -10,14 +10,15 @@
 } */
 
 .container-user {
-  width: 100%;
+  width: 110%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .user-image {
-  width: 100%;
+  width: 80%;
   margin: auto;
 }
 
