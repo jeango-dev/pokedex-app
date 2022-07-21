@@ -4,6 +4,8 @@ import PokemonDetail from './components/PokemonDetail';
 import Pokedex from './components/Pokedex';
 import UserInput from './components/UserInput';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import Header from './components/Header';
+import Footer from './components/Footer';
 // import { useSelector } from 'react-redux';
 // import LoadingScreen from './components/LoadingScreen';
 // import { useEffect, useState } from 'react';
@@ -22,6 +24,7 @@ function App() {
   return (
     <HashRouter>
       {/* {loading && <LoadingScreen />} */}
+      <Header />
       <div className="App">
         <Routes>
           <Route path="/" element={<UserInput />} />
@@ -30,6 +33,7 @@ function App() {
             <Route path="/pokedex/:id" element={<PokemonDetail />} />
           </Route>
         </Routes>
+        <Footer />
       </div>
     </HashRouter>
   );

@@ -1,5 +1,5 @@
-#circle_1 {
-  /* animation: spin 3s linear infinite; */
+.circle_1 {
+  animation: spin 3s linear infinite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,14 +17,14 @@
   border: 8px solid black;
 }
 
-#line_pokeball {
+.line_pokeball {
   position: absolute;
   background-color: black;
   height: 15px;
   width: 115px;
 }
 
-#circle_2 {
+.circle_2 {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -33,7 +33,7 @@
   border: 8px solid black;
 }
 
-#circle_3 {
+.circle_3 {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -41,9 +41,10 @@
   background-color: #dc3545;
   transition: opacity 0.7s;
   cursor: pointer;
+  animation: blink 0.5s alternate infinite;
 }
 
-#circle_3:hover {
+.circle_3:hover {
   opacity: 0;
 }
 
@@ -53,5 +54,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  from {
+    background: #eee;
+  }
+  to {
+    background: #dc3545;
   }
 }

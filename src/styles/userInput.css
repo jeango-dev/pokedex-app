@@ -1,14 +1,3 @@
-/* body {
-  background-image: linear-gradient(
-    to right top,
-    #dc3545,
-    #dc3545,
-    #dc3545,
-    #dc3545,
-    #dc3545
-  );
-} */
-
 .container-user {
   width: auto;
   height: auto;
@@ -18,22 +7,12 @@
   margin: auto;
 }
 
-.nav-container {
-  background: -webkit-linear-gradient(
-    top,
-    #dc3545 46%,
-    #000 46%,
-    #000 55%,
-    #fff 53%
-  );
-}
-
 .user-image {
   width: 100%;
-  max-width: 250px;
+  max-width: 300px;
 }
 
-.user-image2 {
+.user-gif {
   width: 100%;
   max-width: 250px;
   height: 250px;
@@ -66,10 +45,4 @@
   border: none;
   background-color: transparent;
   color: white;
-}
-
-.footer-container {
-  height: 50px;
-  background: -webkit-linear-gradient(bottom, #000 25%, #dc3545 25%);
-  margin-top: 15px;
 }

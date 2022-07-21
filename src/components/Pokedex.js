@@ -1,11 +1,8 @@
 import '../styles/pokedex.css';
-import '../styles/nav.css';
-import '../styles/pokeballNav.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import PokemonCard from './PokemonCard';
-import pokemon from '../img/pokemon.webp';
 import { Button, Form } from 'react-bootstrap';
 import LoadingScreen from './LoadingScreen';
 import { Link } from 'react-router-dom';
@@ -110,10 +107,6 @@ const Pokemons = () => {
   return (
     <>
       <div className="pokedex text-center">
-        <div className="nav"></div>
-        <div id="bg">
-          <img className="pokeapi" src={pokemon} alt="" />
-        </div>
         <div class="exit-container">
           <Link to={'/'}>
             <button clasName="btn-exit">
@@ -126,9 +119,7 @@ const Pokemons = () => {
           <h2 className="user-container">
             Welcolme <span className="user-pokedex">{user}</span>
           </h2>
-          <h5>
-            Find your favorite <span className="user-pokedex">pokemon</span>
-          </h5>
+          <h5>Find your favorite pokemon</h5>
 
           <div className="search">
             <Form.Control
@@ -230,7 +221,6 @@ const Pokemons = () => {
           </Button>
         </div>
       </div>
-      <div className="footer-container"></div>
     </>
   );
 };

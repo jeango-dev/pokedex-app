@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { changeUser } from '../store/slices/user.slice';
 import { useDispatch } from 'react-redux';
 import pokemons from '../img/pokemons.png';
-import pokemon from '../img/pokemon.webp';
 
 const PokemonInput = () => {
   const [userName, setUserName] = useState('');
@@ -20,15 +19,11 @@ const PokemonInput = () => {
   return (
     <div className="container-user text-center align-items-center justify-content-center">
       <div className="col">
-        <div className="nav-container">
-          <img className="user-image" src={pokemon} alt="" />
-        </div>
         <div>
           <img className="user-image" src={pokemons} alt="" />
         </div>
-
         <img
-          className="user-image2"
+          className="user-gif"
           src="https://sergiofrancodev.com/pokeball.gif"
           alt=""
         />
@@ -48,7 +43,6 @@ const PokemonInput = () => {
         >
           <i className="fas fa-xl fa-paper-plane"></i>
         </button>
-        <div className="footer-container"></div>
       </div>
     </div>
   );

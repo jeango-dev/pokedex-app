@@ -1,0 +1,12 @@
+.nav-container {
+  background: -webkit-linear-gradient(
+    top,
+    #dc3545 46%,
+    #000 46%,
+    #000 55%,
+    #fff 53%
+  );
+  display: flex;
+  justify-content: center;
+  height: 120px;
+}
