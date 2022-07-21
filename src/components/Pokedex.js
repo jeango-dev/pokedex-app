@@ -8,6 +8,7 @@ import PokemonCard from './PokemonCard';
 import pokemon from '../img/pokemon.webp';
 import { Button, Form } from 'react-bootstrap';
 import LoadingScreen from './LoadingScreen';
+import { Link } from 'react-router-dom';
 
 const Pokemons = () => {
   const user = useSelector((state) => state.user);
@@ -114,9 +115,11 @@ const Pokemons = () => {
           <img className="pokeapi" src={pokemon} alt="" />
         </div>
         <div class="exit-container">
-          <button clasName="btn-exit">
-            <i class="fas fa-sign-out-alt"></i>
-          </button>
+          <Link to={'/'}>
+            <button clasName="btn-exit">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+          </Link>
         </div>
 
         <div className="text-center">

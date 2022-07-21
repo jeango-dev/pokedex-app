@@ -71,4 +71,5 @@
 .footer-container {
   height: 50px;
   background: -webkit-linear-gradient(bottom, #000 25%, #dc3545 25%);
+  margin-top: 15px;
 }
