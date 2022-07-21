@@ -1,6 +1,6 @@
 .exit-container {
   display: flex;
-  justify-content: end;
+  flex: end;
 }
 
 .exit-container button {
