@@ -111,13 +111,12 @@ const Pokemons = () => {
       <div className="pokedex text-center">
         <div className="nav"></div>
         <div id="bg">
-          {/* <div id="circle_1">
-            <div id="line"></div>
-            <div id="line_pokeball"></div>
-            <div id="circle_2"></div>
-            <div id="circle_3"></div>
-          </div> */}
           <img className="pokeapi" src={pokemon} alt="" />
+        </div>
+        <div class="exit-container">
+          <button clasName="btn-exit">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
         </div>
 
         <div className="text-center">
@@ -228,6 +227,7 @@ const Pokemons = () => {
           </Button>
         </div>
       </div>
+      <div className="footer-container"></div>
     </>
   );
 };

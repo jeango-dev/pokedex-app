@@ -1,3 +1,18 @@
+.exit-container {
+  display: flex;
+  justify-content: end;
+}
+
+.exit-container button {
+  position: absolute;
+  padding: 5px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  background-color: #dc3545;
+  color: #fff;
+}
+
 .pokedex {
   margin-left: 50px;
   margin-right: 50px;
