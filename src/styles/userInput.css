@@ -10,7 +10,7 @@
 } */
 
 .container-user {
-  width: 350px;
+  width: auto;
   height: auto;
   display: flex;
   justify-content: center;
@@ -66,4 +66,9 @@
   border: none;
   background-color: transparent;
   color: white;
+}
+
+.footer-container {
+  height: 40px;
+  background: -webkit-linear-gradient(bottom, #000 25%, #dc3545 25%);
 }

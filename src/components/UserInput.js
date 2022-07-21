@@ -48,6 +48,7 @@ const PokemonInput = () => {
         >
           <i className="fas fa-xl fa-paper-plane"></i>
         </button>
+        <div className="footer-container"></div>
       </div>
     </div>
   );
