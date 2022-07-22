@@ -20,7 +20,8 @@ const Pokemons = () => {
 
   useEffect(() => {
     // document.body.style.backgroundColor = colors[colorIndex];
-    // setError(false);
+    setError(false);
+    setLoading(true);
     axios
       .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
       .then((res) => {
@@ -28,18 +29,18 @@ const Pokemons = () => {
         setPokemonsTable(res.data.results);
       });
     setTimeout(() => setLoading(), 1200);
-    // setLoading(true);
+    setLoading(true);
     axios
       .get(`https://pokeapi.co/api/v2/type/`)
       .then((res) => setTypesPokemons(res.data.results));
-    // setTimeout(() => setLoading(), 1200);
+    setTimeout(() => setLoading(), 1200);
   }, []);
 
   const submit = (e) => {
-    // setLoading(true);
+    setLoading(true);
     setSearchPokemon(e.target.value);
     search(e.target.value);
-    // setTimeout(() => setLoading(), 1200);
+    setTimeout(() => setLoading(), 1200);
   };
 
   const search = (SearchType) => {
@@ -55,15 +56,15 @@ const Pokemons = () => {
 
   const filterTypes = (e) => {
     if (e.target.value !== '') {
-      // setLoading(true);
+      setLoading(true);
       axios.get(e.target.value).then((res) => setPokemons(res.data.pokemon));
-      // setTimeout(() => setLoading(), 1200);
+      setTimeout(() => setLoading(), 1200);
     } else {
-      // setLoading(false);
+      setLoading(false);
       axios
         .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
         .then((res) => setPokemons(res.data.results));
-      // setTimeout(() => setLoading(), 1200);
+      setTimeout(() => setLoading(), 1200);
     }
   };
 
