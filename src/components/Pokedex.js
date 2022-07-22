@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import PokemonCard from './PokemonCard';
-import { Button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import LoadingScreen from './LoadingScreen';
 import { Link } from 'react-router-dom';
 
