@@ -50,15 +50,18 @@ function PokemonCard({ pokemonUrl }) {
             <h5>#{pokemon.id}</h5>
           </div>
         </div>
-        {/* <Link to={`/pokedex/${pokemon.id}`}> */}
         <img
           onClick={handleShow}
           className="imageShiny"
           src={pokemon.imageShiny}
           alt={''}
         />
-        <img className="imageNormal" src={pokemon.image} alt={''} />
-        {/* </Link> */}
+        <img
+          onClick={handleShow}
+          className="imageNormal"
+          src={pokemon.image}
+          alt={''}
+        />
         <div className="nameCard">
           <h5>{pokemon.name}</h5>
         </div>

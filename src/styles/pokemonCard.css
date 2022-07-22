@@ -33,6 +33,7 @@
   height: auto;
   min-height: 150px;
   margin: 20px;
+  cursor: pointer;
 }
 
 .nameCard {
@@ -87,8 +88,6 @@ image-modal-container {
   float: left;
   transition: transform 0.4s;
   transition: opacity 0.5s;
-
-  cursor: pointer;
 }
 
 .imageShiny-modal:hover {

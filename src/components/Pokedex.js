@@ -88,7 +88,7 @@ const Pokemons = () => {
   const pageNumbers = [];
 
   for (let i = 1; i <= totalPages; i++) {
-    if (i < page + 3 && i > page - 7 + 5) {
+    if (i < page + 5 && i > page - 7 + 6) {
       pageNumbers.push(i);
     }
   }
@@ -103,7 +103,7 @@ const Pokemons = () => {
         <div className="exit-container">
           <Link to={'/'}>
             <button clasName="btn-exit">
-              <i className="fas fa-sign-out-alt"></i>
+              <i className="fa-solid fa-sign-out-alt"></i>
             </button>
           </Link>
         </div>
@@ -112,7 +112,6 @@ const Pokemons = () => {
             Welcolme <span className="user-pokedex">{user}</span>
           </h2>
           <h5>Find your favorite pokemon</h5>
-
           <div className="search">
             <Form.Control
               className="text-center"
@@ -121,9 +120,9 @@ const Pokemons = () => {
               onChange={submit}
               placeholder="Search Pokemon"
             />
-            <Button disabled variant="danger">
+            <button disabled className="btns-pokedex">
               <i className="fa-solid fa-magnifying-glass"></i>
-            </Button>
+            </button>
           </div>
           <div className="select-container">
             <Form.Select className="select-pokedex" onChange={filterTypes}>
@@ -138,30 +137,46 @@ const Pokemons = () => {
         </div>
         <div className="text-center">
           <div className="paginationPokedex">
-            <Button
-              variant="danger"
+            <button
+              className="btns-pokedex"
+              onClick={() => setPage(1)}
+              disabled={page === 1}
+            >
+              <i class="fa-solid fa-angles-left"></i>
+            </button>
+            <button
+              className="btns-pokedex"
               onClick={() => setPage(page - 1)}
               disabled={page === 1}
             >
-              <i className="fas fa-chevron-left"></i>
-            </Button>
+              <i className="fa-solid fa-chevron-left"></i>
+            </button>
             {pageNumbers.map((number) => (
-              <Button
+              <button
+                className={`btns-numbers ${
+                  number === page ? 'btns-numbers-active' : ''
+                }`}
                 active={page === number}
-                variant="outline-success"
                 key={number}
                 onClick={() => setPage(number)}
               >
                 {number}
-              </Button>
+              </button>
             ))}
-            <Button
-              variant="danger"
+            <button
+              className="btns-pokedex"
               onClick={() => setPage(page + 1)}
               disabled={page === totalPages}
             >
-              <i className="fas fa-chevron-right"></i>
-            </Button>
+              <i className="fa-solid fa-chevron-right"></i>
+            </button>
+            <button
+              className="btns-pokedex"
+              onClick={() => setPage(totalPages)}
+              disabled={page === totalPages}
+            >
+              <i class="fa-solid fa-angles-right"></i>
+            </button>
           </div>
           {loading ? (
             <LoadingScreen />
@@ -187,30 +202,46 @@ const Pokemons = () => {
           )}
         </div>
         <div className="paginationPokedex">
-          <Button
-            variant="danger"
+          <button
+            className="btns-pokedex"
+            onClick={() => setPage(1)}
+            disabled={page === 1}
+          >
+            <i class="fa-solid fa-angles-left"></i>
+          </button>
+          <button
+            className="btns-pokedex"
             onClick={() => setPage(page - 1)}
             disabled={page === 1}
           >
-            <i className="fas fa-chevron-left"></i>
-          </Button>
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
           {pageNumbers.map((number) => (
-            <Button
+            <button
+              className={`btns-numbers ${
+                number === page ? 'btns-numbers-active' : ''
+              }`}
               active={page === number}
-              variant="outline-success"
               key={number}
               onClick={() => setPage(number)}
             >
               {number}
-            </Button>
+            </button>
           ))}
-          <Button
-            variant="danger"
+          <button
+            className="btns-pokedex"
             onClick={() => setPage(page + 1)}
             disabled={page === totalPages}
           >
-            <i className="fas fa-chevron-right"></i>
-          </Button>
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
+          <button
+            className="btns-pokedex"
+            onClick={() => setPage(totalPages)}
+            disabled={page === totalPages}
+          >
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
         </div>
       </div>
     </>

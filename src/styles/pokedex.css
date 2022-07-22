@@ -12,6 +12,45 @@
   background-color: #dc3545;
   color: #fff;
   right: 20px;
+  border: none;
+}
+
+.btns-pokedex {
+  padding: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: #dc3545;
+  color: #fff;
+  right: 20px;
+  border: none;
+}
+
+.btns-pokedex:disabled {
+  background-color: #e87c87;
+}
+
+.btns-numbers {
+  padding: 5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  color: #198653;
+  right: 20px;
+  border: 1px solid #198653;
+}
+
+.btns-numbers:active {
+  background-color: #198653;
+  color: #fff;
+  border: none;
+}
+
+.btns-numbers-active {
+  background-color: #198653;
+  color: #fff;
+  border: none;
 }
 
 .pokedex {
