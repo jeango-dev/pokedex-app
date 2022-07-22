@@ -4,13 +4,16 @@ import React, { useEffect, useState } from 'react';
 import ColorCard from './ColorCard';
 import { useDispatch } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
+// import ErrorPokemon from './ErrorPokemon';
 
 function PokemonCard({ pokemonUrl }) {
   const [pokemon, setPokemon] = useState({});
   const [show, setShow] = useState(false);
+  // const [error, setError] = useState(true);
 
   const dispatch = useDispatch();
   useEffect(() => {
+    // setError(false);
     axios.get(pokemonUrl).then((res) =>
       setPokemon({
         name: res.data.name,
@@ -23,6 +26,9 @@ function PokemonCard({ pokemonUrl }) {
         defense: res.data.stats[2].base_stat,
         speed: res.data.stats[5].base_stat,
         typeColor: res.data.types[0].type.name,
+      }).catch((error) => {
+        console.log(error);
+        // setError(true);
       })
     );
   }, [dispatch, pokemonUrl]);
@@ -33,6 +39,9 @@ function PokemonCard({ pokemonUrl }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  console.log(pokemon);
+
+  // if (!error) {
   return (
     <div className="d-inline">
       <div
@@ -143,5 +152,13 @@ function PokemonCard({ pokemonUrl }) {
     </div>
   );
 }
+//   else {
+//     return (
+//       <div className="pokedex-screen">
+//         <ErrorPokemon />
+//       </div>
+//     );
+//   }
+// }
 
 export default PokemonCard;
