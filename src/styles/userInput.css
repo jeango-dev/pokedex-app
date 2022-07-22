@@ -1,20 +1,21 @@
 .container-user {
   width: auto;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
+  text-align: center;
 }
 
 .user-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .user-gif {
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .title-trainer {

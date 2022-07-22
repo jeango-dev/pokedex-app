@@ -28,7 +28,7 @@ const PokemonInput = () => {
       {loading ? (
         <LoadingScreen />
       ) : (
-        <div className="container-user text-center align-items-center justify-content-center">
+        <div className="container-user">
           <div className="col">
             <div>
               <img className="user-image" src={pokemons} alt="" />
