@@ -1,20 +1,20 @@
-*,
+/* *,
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
+} */
 
 .center-on-page {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 /* Poké Styles */
 .pokeball {
-  text-align: justify !important;
+  text-align: justify;
   position: relative;
   width: 200px;
   height: 200px;
@@ -100,8 +100,8 @@
 }
 
 .overlay {
-  background-color: #dc3545;
-  position: fixed;
+  background-color: #fff;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;

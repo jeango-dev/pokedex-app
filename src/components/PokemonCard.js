@@ -112,7 +112,6 @@ function PokemonCard({ pokemonUrl }) {
                 />
                 <img className="imageNormal-modal" src={pokemon.image} alt="" />
               </div>
-
               {/* <div className="nameCard">
                 <h5>{pokemon.name}</h5>
               </div> */}

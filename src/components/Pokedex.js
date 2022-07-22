@@ -32,8 +32,10 @@ const Pokemons = () => {
   }, []);
 
   const submit = (e) => {
+    setLoading(true);
     setSearchPokemon(e.target.value);
     search(e.target.value);
+    setTimeout(() => setLoading(), 1200);
   };
 
   const search = (SearchType) => {
@@ -47,15 +49,13 @@ const Pokemons = () => {
     setPokemons(resultSearch);
   };
 
-  console.log(search);
-
   const filterTypes = (e) => {
     if (e.target.value !== '') {
       setLoading(true);
       axios.get(e.target.value).then((res) => setPokemons(res.data.pokemon));
       setTimeout(() => setLoading(), 1200);
     } else {
-      setLoading(true);
+      setLoading(false);
       axios
         .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
         .then((res) => setPokemons(res.data.results));
@@ -81,23 +81,16 @@ const Pokemons = () => {
 
   const pokemonNumbers = 8;
   const lastIndex = pokemonNumbers * page;
-  const firstIndex = lastIndex - pokemonNumbers;
-  const pokemonPaginated = pokemons.slice(firstIndex, lastIndex);
-  const totalPages = Math.ceil(pokemons.length / pokemonNumbers);
-
-  let initialPage = page < 5 ? 1 : page - 4;
-  let lastPage = totalPages;
-  if (page < totalPages - 5) {
-    if (page > 5) {
-      lastPage = page;
-    } else {
-      lastPage = 5;
-    }
-  }
+  const fristIndex = lastIndex - pokemonNumbers;
+  const pokemonPaginated = pokemons.slice(fristIndex, lastIndex);
+  const totalPages = Math.ceil(pokemons?.length / pokemonNumbers);
 
   const pageNumbers = [];
-  for (let i = initialPage; i <= lastPage; i++) {
-    pageNumbers.push(i);
+
+  for (let i = 1; i <= totalPages; i++) {
+    if (i < page + 3 && i > page - 7 + 5) {
+      pageNumbers.push(i);
+    }
   }
 
   // console.log(pokemonPaginated);
@@ -107,14 +100,13 @@ const Pokemons = () => {
   return (
     <>
       <div className="pokedex text-center">
-        <div class="exit-container">
+        <div className="exit-container">
           <Link to={'/'}>
             <button clasName="btn-exit">
-              <i class="fas fa-sign-out-alt"></i>
+              <i className="fas fa-sign-out-alt"></i>
             </button>
           </Link>
         </div>
-
         <div className="text-center">
           <h2 className="user-container">
             Welcolme <span className="user-pokedex">{user}</span>

@@ -1,6 +1,5 @@
 .footer-container {
   height: 120px;
-  /* background: -webkit-linear-gradient(bottom, #000 25%, #dc3545 25%); */
   background: -webkit-linear-gradient(
     top,
     #fff 46%,
@@ -8,7 +7,9 @@
     #000 55%,
     #dc3545 53%
   );
-  margin-top: 15px;
+  position: absolute;
   display: flex;
   justify-content: center;
+  bottom: 0;
+  width: 100%;
 }
