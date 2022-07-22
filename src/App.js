@@ -6,24 +6,14 @@ import UserInput from './components/UserInput';
 import ProtectedRoutes from './components/ProtectedRoutes';
 import Header from './components/Header';
 import Footer from './components/Footer';
-// import LoadingScreen from './components/LoadingScreen';
-// import { useEffect, useState } from 'react';
+// import DarkMode from './components/DarkMode';
 
 function App() {
-  // const [loading, setLoading] = useState(false);
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   setTimeout(() => setLoading(), 1200);
-  // }, []);
-
   return (
     <HashRouter>
-      {/* {loading ? ( */}
-      {/* <LoadingScreen /> */}
-      {/* ) : ( */}
       <div className="App">
         <Header />
+        {/* <DarkMode /> */}
         <Routes>
           <Route path="/" element={<UserInput />} />
           <Route element={<ProtectedRoutes />}>
@@ -33,7 +23,6 @@ function App() {
         </Routes>
         <Footer />
       </div>
-      {/* )} */}
     </HashRouter>
   );
 }

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import ColorCard from './ColorCard';
 import { useDispatch } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
+import { Row, Col } from 'reactstrap';
+import { ProgressBar } from 'react-bootstrap';
 // import ErrorPokemon from './ErrorPokemon';
 
 function PokemonCard({ pokemonUrl }) {
@@ -21,10 +23,14 @@ function PokemonCard({ pokemonUrl }) {
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${res.data.id}.png`,
         imageShiny: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/shiny/${res.data.id}.png`,
         type: res.data.types,
+        height: res.data.height,
+        weight: res.data.weight,
         hp: res.data.stats[0].base_stat,
         attack: res.data.stats[1].base_stat,
         defense: res.data.stats[2].base_stat,
         speed: res.data.stats[5].base_stat,
+        abilities: res.data.abilities,
+        moves: res.data.moves,
         typeColor: res.data.types[0].type.name,
       }).catch((error) => {
         console.log(error);
@@ -96,13 +102,10 @@ function PokemonCard({ pokemonUrl }) {
           <>
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
-                <Modal.Title>
-                  <div className="nameCard">
-                    <h5>{pokemon.name}</h5>
-                  </div>
-                </Modal.Title>
+                <Modal.Title></Modal.Title>
               </Modal.Header>
               <Modal.Body
+                closeButton
                 style={{
                   borderColor: ColorCard(pokemon.typeColor),
                   background: `linear-gradient(to top, white 0%,
@@ -111,45 +114,115 @@ function PokemonCard({ pokemonUrl }) {
                   )} 100%)`,
                 }}
               >
-                <div>
-                  <div className="titleCard">
-                    {/* <div className="numberCard">
+                <div className="nameCard">
+                  <h5>{pokemon.name}</h5>
+                </div>
+                <Row>
+                  <Col>
+                    <div>
+                      <div className="titleCard">
+                        {/* <div className="numberCard">
                   <h5>#{pokemon.id}</h5>
                 </div> */}
-                  </div>
-                  <div className="image-modal-container">
-                    <img
-                      className="imageShiny-modal"
-                      src={pokemon.imageShiny}
-                      alt={''}
-                    />
-                    <img
-                      className="imageNormal-modal"
-                      src={pokemon.image}
-                      alt=""
-                    />
-                  </div>
-                  {/* <div className="nameCard">
+                      </div>
+                      <div className="image-modal-container">
+                        <img
+                          className="imageShiny-modal"
+                          src={pokemon.imageShiny}
+                          alt={''}
+                        />
+                        <img
+                          className="imageNormal-modal"
+                          src={pokemon.image}
+                          alt=""
+                        />
+                      </div>
+                      {/* <div className="nameCard">
                 <h5>{pokemon.name}</h5>
               </div> */}
-                  <div className="typeContainer">
-                    <p>
-                      {pokemon.type?.map((type) => {
+                    </div>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <h4>Types</h4>
+                    <div className="typeContainer">
+                      <p>
+                        {pokemon.type?.map((type) => {
+                          return (
+                            <span
+                              style={{
+                                background: ColorCard(type.type.name),
+                              }}
+                              className="types"
+                              key={type.type.url}
+                            >
+                              {type.type.name}
+                            </span>
+                          );
+                        })}
+                      </p>
+                    </div>
+                    <p>Height: {pokemon.height}</p>
+                    <p>Weight: {pokemon.weight}</p>
+                    <div>
+                      <h4>Abilites</h4>
+                      {pokemon.abilities?.map((ability) => {
                         return (
-                          <span
-                            style={{
-                              background: ColorCard(type.type.name),
-                            }}
-                            className="types"
-                            key={type.type.url}
-                          >
-                            {type.type.name}
-                          </span>
+                          <ul key={ability.ability.url}>
+                            <li className="abilitiyCard">
+                              {' '}
+                              {ability.ability.name}{' '}
+                            </li>
+                          </ul>
                         );
                       })}
+                    </div>
+                  </Col>
+                  <Col xs={6}>
+                    <h4>Stats</h4>
+                    <p>
+                      Hp {pokemon.hp}/100
+                      <ProgressBar
+                        style={{ height: '25px' }}
+                        variant="info"
+                        max="100"
+                        animated
+                        now={pokemon.hp}
+                      ></ProgressBar>
                     </p>
-                  </div>
-                </div>
+                    <p>
+                      Speed {pokemon.speed}/100
+                      <ProgressBar
+                        style={{ height: '25px' }}
+                        max="100"
+                        animated
+                        now={pokemon.speed}
+                      ></ProgressBar>
+                    </p>
+                    <p>
+                      Attack {pokemon.attack}/100
+                      <ProgressBar
+                        style={{ height: '25px' }}
+                        variant="danger"
+                        max="100"
+                        animated
+                        now={pokemon.attack}
+                      ></ProgressBar>
+                    </p>
+                    <p>
+                      Defense {pokemon.defense}/100
+                      <ProgressBar
+                        style={{ height: '25px' }}
+                        variant="warning"
+                        max="100"
+                        animated
+                        now={pokemon.defense}
+                      ></ProgressBar>
+                    </p>
+                  </Col>
+                </Row>
               </Modal.Body>
               <Modal.Footer></Modal.Footer>
             </Modal>

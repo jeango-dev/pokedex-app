@@ -19,7 +19,6 @@ const Pokemons = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    // document.body.style.backgroundColor = colors[colorIndex];
     setError(false);
     setLoading(true);
     axios
@@ -70,20 +69,6 @@ const Pokemons = () => {
     }
   };
 
-  // const [colorIndex, setColorIndex] = useState(0);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // const colors = ['#263547', 'white'];
-
-  // Background
-
-  // function handleChangeIndex() {
-  //   const next = colorIndex + 1 === colors.length ? 0 : colorIndex + 1;
-  //   setColorIndex(next);
-  // }
-
-  // document.body.style = `background:  ${isDark ? 'rgb(29, 27, 27)' : 'rgb(253, 253, 253)'}`
-
   // Pagination
 
   const pokemonNumbers = 8;
@@ -113,7 +98,7 @@ const Pokemons = () => {
 
   return (
     <>
-      <div className="pokedex text-center">
+      <div className={`pokedex text-center`}>
         <div className="exit-container">
           <Link to={'/'}>
             <button clasName="btn-exit">
@@ -121,6 +106,7 @@ const Pokemons = () => {
             </button>
           </Link>
         </div>
+
         <div className="text-center">
           <h2 className="user-container">
             Welcolme <span className="user-pokedex">{user}</span>
