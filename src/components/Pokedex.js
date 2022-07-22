@@ -44,12 +44,14 @@ const Pokemons = () => {
   };
 
   const search = (SearchType) => {
+    setLoading(true);
     // eslint-disable-next-line array-callback-return
     const resultSearch = pokemonsTable.filter((element) => {
       if (element.name.toString().includes(SearchType.toString())) {
         return element;
       }
     });
+    setTimeout(() => setLoading(), 1200);
     setPage(1);
     setPokemons(resultSearch);
   };
@@ -89,7 +91,6 @@ const Pokemons = () => {
   const fristIndex = lastIndex - pokemonNumbers;
   const pokemonPaginated = pokemons.slice(fristIndex, lastIndex);
   const totalPages = Math.ceil(pokemons?.length / pokemonNumbers);
-
   const pageNumbers = [];
 
   for (let i = 1; i <= totalPages; i++) {
