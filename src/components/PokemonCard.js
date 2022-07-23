@@ -127,14 +127,14 @@ function PokemonCard({ pokemonUrl }) {
                       </div>
                       <div className="image-modal-container">
                         <img
-                          className="imageShiny-modal"
-                          src={pokemon.imageShiny}
-                          alt={''}
-                        />
-                        <img
                           className="imageNormal-modal"
                           src={pokemon.image}
                           alt=""
+                        />
+                        <img
+                          className="imageShiny-modal"
+                          src={pokemon.imageShiny}
+                          alt={''}
                         />
                       </div>
                       <div className="type-container-modal">
