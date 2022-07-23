@@ -72,21 +72,3 @@ progress {
   list-style: none;
   margin: 5px;
 }
-
-.typeContainer {
-  margin: 1px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.types {
-  text-transform: capitalize;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 10px;
-  margin-right: 5px;
-  margin-left: 5px;
-  color: white;
-  font-size: 14px;
-}

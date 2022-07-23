@@ -54,17 +54,13 @@
   position: absolute;
 }
 
-.descriptionCard {
-  text-transform: capitalize;
-}
-
-.type-xontainer {
+.typeContainer {
   margin: 1px 0;
   display: flex;
   justify-content: center;
 }
 
-.types-detail {
+.types {
   text-transform: capitalize;
   padding: 5px;
   padding-left: 15px;
@@ -76,7 +72,12 @@
   font-size: 14px;
 }
 
-image-modal-container {
+.name-modal {
+  text-transform: capitalize;
+  color: white;
+}
+
+.image-modal-container {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -103,5 +104,35 @@ image-modal-container {
 .abilities {
   text-transform: capitalize;
   list-style: none;
-  margin-right: 25px;
+  padding: 0;
+}
+
+.abilities-container h4 {
+  margin: 15px;
+}
+
+.stats {
+  margin-left: 20px;
+}
+
+.type-container-modal {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.types-modal {
+  text-transform: capitalize;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.other-stats {
+  align-self: center;
 }

@@ -105,7 +105,6 @@ function PokemonCard({ pokemonUrl }) {
                 <Modal.Title></Modal.Title>
               </Modal.Header>
               <Modal.Body
-                closeButton
                 style={{
                   borderColor: ColorCard(pokemon.typeColor),
                   background: `linear-gradient(to top, white 0%,
@@ -114,8 +113,8 @@ function PokemonCard({ pokemonUrl }) {
                   )} 100%)`,
                 }}
               >
-                <div className="nameCard">
-                  <h5>{pokemon.name}</h5>
+                <div className="text-center name-modal">
+                  <h1>{pokemon.name}</h1>
                 </div>
                 <Row>
                   <Col>
@@ -137,7 +136,7 @@ function PokemonCard({ pokemonUrl }) {
                           alt=""
                         />
                       </div>
-                      <div className="typeContainer">
+                      <div className="type-container-modal">
                         <p>
                           {pokemon.type?.map((type) => {
                             return (
@@ -145,7 +144,7 @@ function PokemonCard({ pokemonUrl }) {
                                 style={{
                                   background: ColorCard(type.type.name),
                                 }}
-                                className="types"
+                                className="types-modal"
                                 key={type.type.url}
                               >
                                 {type.type.name}
@@ -162,65 +161,66 @@ function PokemonCard({ pokemonUrl }) {
                 </Row>
 
                 <Row>
-                  <Col className="text-center">
+                  <Col xs={6}>
+                    <div className="text-center">
+                      <h4>Stats</h4>
+                    </div>
+                    <div className="stats">
+                      <p>
+                        Hp {pokemon.hp}/100
+                        <ProgressBar
+                          style={{ height: '25px' }}
+                          variant="info"
+                          max="100"
+                          animated
+                          now={pokemon.hp}
+                        ></ProgressBar>
+                      </p>
+                      <p>
+                        Speed {pokemon.speed}/100
+                        <ProgressBar
+                          style={{ height: '25px' }}
+                          max="100"
+                          animated
+                          now={pokemon.speed}
+                        ></ProgressBar>
+                      </p>
+                      <p>
+                        Attack {pokemon.attack}/100
+                        <ProgressBar
+                          style={{ height: '25px' }}
+                          variant="danger"
+                          max="100"
+                          animated
+                          now={pokemon.attack}
+                        ></ProgressBar>
+                      </p>
+                      <p>
+                        Defense {pokemon.defense}/100
+                        <ProgressBar
+                          style={{ height: '25px' }}
+                          variant="warning"
+                          max="100"
+                          animated
+                          now={pokemon.defense}
+                        ></ProgressBar>
+                      </p>
+                    </div>
+                  </Col>
+                  <Col className="text-center other-stats">
                     <h4>Measures</h4>
                     <p>Height: {pokemon.height}</p>
                     <p>Weight: {pokemon.weight}</p>
-                    <div>
-                      <h4>Abilites</h4>
+                    <div className="abilities-container">
+                      <h4>Abilities</h4>
                       {pokemon.abilities?.map((ability) => {
                         return (
-                          <ul key={ability.ability.url}>
-                            <li className="abilities">
-                              {' '}
-                              {ability.ability.name}{' '}
-                            </li>
+                          <ul className="abilities" key={ability.ability.url}>
+                            <li> {ability.ability.name} </li>
                           </ul>
                         );
                       })}
                     </div>
-                  </Col>
-                  <Col className="text-center" xs={6}>
-                    <h4>Stats</h4>
-                    <p>
-                      Hp {pokemon.hp}/100
-                      <ProgressBar
-                        style={{ height: '25px' }}
-                        variant="info"
-                        max="100"
-                        animated
-                        now={pokemon.hp}
-                      ></ProgressBar>
-                    </p>
-                    <p>
-                      Speed {pokemon.speed}/100
-                      <ProgressBar
-                        style={{ height: '25px' }}
-                        max="100"
-                        animated
-                        now={pokemon.speed}
-                      ></ProgressBar>
-                    </p>
-                    <p>
-                      Attack {pokemon.attack}/100
-                      <ProgressBar
-                        style={{ height: '25px' }}
-                        variant="danger"
-                        max="100"
-                        animated
-                        now={pokemon.attack}
-                      ></ProgressBar>
-                    </p>
-                    <p>
-                      Defense {pokemon.defense}/100
-                      <ProgressBar
-                        style={{ height: '25px' }}
-                        variant="warning"
-                        max="100"
-                        animated
-                        now={pokemon.defense}
-                      ></ProgressBar>
-                    </p>
                   </Col>
                 </Row>
               </Modal.Body>
