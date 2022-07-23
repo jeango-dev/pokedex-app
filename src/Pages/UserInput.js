@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { changeUser } from '../store/slices/user.slice';
 import { useDispatch } from 'react-redux';
 import pokemons from '../img/pokemons.png';
-import LoadingScreen from './LoadingScreen';
+import LoadingScreen from '../components/LoadingScreen';
 
 const PokemonInput = () => {
   const [userName, setUserName] = useState('');

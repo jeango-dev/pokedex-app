@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import PokemonCard from './PokemonCard';
 import { Form } from 'react-bootstrap';
-import LoadingScreen from './LoadingScreen';
+import LoadingScreen from '../components/LoadingScreen';
 import { Link } from 'react-router-dom';
 // import ErrorPokemon from './ErrorPokemon';
 

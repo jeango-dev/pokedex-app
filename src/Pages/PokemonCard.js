@@ -1,7 +1,7 @@
 import '../styles/pokemonCard.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import ColorCard from './ColorCard';
+import ColorCard from '../components/ColorCard';
 import { useDispatch } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 import { Row, Col } from 'reactstrap';
