@@ -82,23 +82,22 @@
   justify-content: center;
   text-align: center;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .imageShiny-modal {
-  width: 90%;
-  position: absolute;
-  float: left;
+  width: 50%;
+  /* float: left; */
   transition: transform 0.4s;
   transition: opacity 0.5s;
-  margin-bottom: 10px;
 }
 
-.imageShiny-modal:hover {
+/* .imageShiny-modal:hover {
   opacity: 0;
-}
+} */
 
 .imageNormal-modal {
-  width: 96%;
+  width: 50%;
   height: auto;
   min-height: 150px;
 }
@@ -118,12 +117,13 @@
 }
 
 .type-container-modal {
-  margin: 20px;
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 
 .types-modal {
+  top: 25px;
   text-transform: capitalize;
   padding: 10px;
   padding-left: 30px;
