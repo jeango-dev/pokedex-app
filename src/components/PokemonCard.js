@@ -161,8 +161,8 @@ function PokemonCard({ pokemonUrl }) {
                 </Row>
 
                 <Row>
-                  <Col xs={6}>
-                    <div className="text-center">
+                  <Col className="text-center" xs={6}>
+                    <div>
                       <h4>Stats</h4>
                     </div>
                     <div className="stats">
@@ -209,8 +209,10 @@ function PokemonCard({ pokemonUrl }) {
                   </Col>
                   <Col className="text-center other-stats">
                     <h4>Measures</h4>
-                    <p>Height: {pokemon.height}</p>
-                    <p>Weight: {pokemon.weight}</p>
+                    <h5>Height </h5>
+                    <p>{pokemon.height} m</p>
+                    <h5>Weight </h5>
+                    <p>{pokemon.weight} kg</p>
                     <div className="abilities-container">
                       <h4>Abilities</h4>
                       {pokemon.abilities?.map((ability) => {
