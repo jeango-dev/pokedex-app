@@ -45,7 +45,7 @@ function PokemonCard({ pokemonUrl }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.log(pokemon);
+  // console.log(pokemon);
 
   // if (!error) {
   return (
@@ -101,11 +101,8 @@ function PokemonCard({ pokemonUrl }) {
 
           <>
             <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title></Modal.Title>
-              </Modal.Header>
               <Modal.Body
-                className="modal-container"
+                className="modal-container rounded"
                 style={{
                   borderColor: ColorCard(pokemon.typeColor),
                   background: `linear-gradient(to top, white 0%,
@@ -114,6 +111,14 @@ function PokemonCard({ pokemonUrl }) {
                   )} 100%)`,
                 }}
               >
+                <div className="btn-close-container">
+                  <button
+                    type="button"
+                    className="btn-close"
+                    onClick={handleClose}
+                  ></button>
+                </div>
+
                 <div className="text-center name-modal">
                   <h1>{pokemon.name}</h1>
                 </div>
@@ -233,7 +238,6 @@ function PokemonCard({ pokemonUrl }) {
                   </Col>
                 </Row>
               </Modal.Body>
-              <Modal.Footer></Modal.Footer>
             </Modal>
           </>
         </div>

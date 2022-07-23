@@ -77,6 +77,16 @@
   color: white;
 }
 
+.modal-container {
+  border: 7px solid;
+}
+
+.btn-close-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .types-pokemon-colors {
   color: black;
 }

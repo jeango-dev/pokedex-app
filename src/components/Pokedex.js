@@ -7,7 +7,7 @@ import PokemonCard from './PokemonCard';
 import { Form } from 'react-bootstrap';
 import LoadingScreen from './LoadingScreen';
 import { Link } from 'react-router-dom';
-import ErrorPokemon from './ErrorPokemon';
+// import ErrorPokemon from './ErrorPokemon';
 
 const Pokemons = () => {
   const user = useSelector((state) => state.user);
@@ -16,11 +16,11 @@ const Pokemons = () => {
   const [pokemonsTable, setPokemonsTable] = useState([]);
   const [typesPokemons, setTypesPokemons] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    setError(false);
+    // setError(false);
     setLoading(true);
     axios
       .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
@@ -116,13 +116,13 @@ const Pokemons = () => {
   // console.log(pokemons);
   // console.log(typesPokemons);
 
-  if (error) {
-    return (
-      <div className="pokedex-screen">
-        <ErrorPokemon />
-      </div>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <div className="pokedex-screen">
+  //       <ErrorPokemon />
+  //     </div>
+  //   );
+  // }
 
   return (
     <>
