@@ -117,22 +117,10 @@ function PokemonCard({ pokemonUrl }) {
                 <div className="text-center name-modal">
                   <h1>{pokemon.name}</h1>
                 </div>
-                <Row className="types-pokemon-colors text-center">
-                  <Col>
-                    <h4>Normal</h4>
-                  </Col>
-                  <Col>
-                    <h4>Shiny</h4>
-                  </Col>
-                </Row>
+
                 <Row>
                   <Col>
                     <div>
-                      <div className="titleCard">
-                        {/* <div className="numberCard">
-                          <h5>#{pokemon.id}</h5>
-                        </div> */}
-                      </div>
                       <div className="image-modal-container">
                         <img
                           className="imageNormal-modal"
@@ -145,27 +133,40 @@ function PokemonCard({ pokemonUrl }) {
                           alt={''}
                         />
                       </div>
-                      <div className="type-container-modal">
-                        <p>
-                          {pokemon.type?.map((type) => {
-                            return (
-                              <span
-                                style={{
-                                  background: ColorCard(type.type.name),
-                                  textTransform: 'capitalize',
-                                }}
-                                className="types-modal"
-                                key={type.type.url}
-                              >
-                                {type.type.name}
-                              </span>
-                            );
-                          })}
-                        </p>
-                      </div>
+
                       {/* <div className="nameCard">
                 <h5>{pokemon.name}</h5>
               </div> */}
+                    </div>
+                  </Col>
+                </Row>
+                <Row className="types-pokemon-colors text-center">
+                  <Col>
+                    <h4>Normal</h4>
+                  </Col>
+                  <Col>
+                    <h4>Shiny</h4>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <div className="type-container-modal">
+                      <p>
+                        {pokemon.type?.map((type) => {
+                          return (
+                            <span
+                              style={{
+                                background: ColorCard(type.type.name),
+                                textTransform: 'capitalize',
+                              }}
+                              className="types-modal"
+                              key={type.type.url}
+                            >
+                              {type.type.name}
+                            </span>
+                          );
+                        })}
+                      </p>
                     </div>
                   </Col>
                 </Row>
