@@ -84,6 +84,30 @@ const Pokemons = () => {
     }
   }
 
+  const firstPage = () => {
+    setLoading(true);
+    setPage(1);
+    setTimeout(() => setLoading(), 1200);
+  };
+
+  const previousPage = () => {
+    setLoading(true);
+    setPage(page - 1);
+    setTimeout(() => setLoading(), 1200);
+  };
+
+  const nextPage = () => {
+    setLoading(true);
+    setPage(page + 1);
+    setTimeout(() => setLoading(), 1200);
+  };
+
+  const lastPage = () => {
+    setLoading(true);
+    setPage(totalPages);
+    setTimeout(() => setLoading(), 1200);
+  };
+
   // console.log(pokemonPaginated);
   // console.log(pokemons);
   // console.log(typesPokemons);
@@ -139,14 +163,14 @@ const Pokemons = () => {
           <div className="paginationPokedex">
             <button
               className="btns-pokedex"
-              onClick={() => setPage(1)}
+              onClick={firstPage}
               disabled={page === 1}
             >
               <i class="fa-solid fa-angles-left"></i>
             </button>
             <button
               className="btns-pokedex"
-              onClick={() => setPage(page - 1)}
+              onClick={previousPage}
               disabled={page === 1}
             >
               <i className="fa-solid fa-chevron-left"></i>
@@ -165,14 +189,14 @@ const Pokemons = () => {
             ))}
             <button
               className="btns-pokedex"
-              onClick={() => setPage(page + 1)}
+              onClick={nextPage}
               disabled={page === totalPages}
             >
               <i className="fa-solid fa-chevron-right"></i>
             </button>
             <button
               className="btns-pokedex"
-              onClick={() => setPage(totalPages)}
+              onClick={lastPage}
               disabled={page === totalPages}
             >
               <i class="fa-solid fa-angles-right"></i>
@@ -206,14 +230,14 @@ const Pokemons = () => {
         <div className="paginationPokedex">
           <button
             className="btns-pokedex"
-            onClick={() => setPage(1)}
+            onClick={firstPage}
             disabled={page === 1}
           >
             <i class="fa-solid fa-angles-left"></i>
           </button>
           <button
             className="btns-pokedex"
-            onClick={() => setPage(page - 1)}
+            onClick={previousPage}
             disabled={page === 1}
           >
             <i className="fa-solid fa-chevron-left"></i>
@@ -232,14 +256,14 @@ const Pokemons = () => {
           ))}
           <button
             className="btns-pokedex"
-            onClick={() => setPage(page + 1)}
+            onClick={nextPage}
             disabled={page === totalPages}
           >
             <i className="fa-solid fa-chevron-right"></i>
           </button>
           <button
             className="btns-pokedex"
-            onClick={() => setPage(totalPages)}
+            onClick={lastPage}
             disabled={page === totalPages}
           >
             <i class="fa-solid fa-angles-right"></i>
