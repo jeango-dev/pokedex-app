@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import '../styles/pokedex.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -41,14 +42,13 @@ const Pokemons = () => {
   };
 
   const search = (SearchType) => {
-    // setLoading(true);
-    // eslint-disable-next-line array-callback-return
+    setLoading(true);
     const resultSearch = pokemonsTable.filter((element) => {
       if (element.name.toString().includes(SearchType.toString())) {
         return element;
       }
     });
-    // setTimeout(() => setLoading(), 1200);
+    setTimeout(() => setLoading(), 1200);
     setPage(1);
     setPokemons(resultSearch);
   };
