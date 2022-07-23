@@ -138,3 +138,7 @@
 .other-stats {
   align-self: center;
 }
+
+.modal-container h4 {
+  color: #198653;
+}

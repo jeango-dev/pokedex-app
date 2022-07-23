@@ -105,6 +105,7 @@ function PokemonCard({ pokemonUrl }) {
                 <Modal.Title></Modal.Title>
               </Modal.Header>
               <Modal.Body
+                className="modal-container"
                 style={{
                   borderColor: ColorCard(pokemon.typeColor),
                   background: `linear-gradient(to top, white 0%,
