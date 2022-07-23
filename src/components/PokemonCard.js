@@ -117,6 +117,14 @@ function PokemonCard({ pokemonUrl }) {
                 <div className="text-center name-modal">
                   <h1>{pokemon.name}</h1>
                 </div>
+                <Row className="types-pokemon-colors text-center">
+                  <Col>
+                    <h4>Normal</h4>
+                  </Col>
+                  <Col>
+                    <h4>Shiny</h4>
+                  </Col>
+                </Row>
                 <Row>
                   <Col>
                     <div>
@@ -161,7 +169,7 @@ function PokemonCard({ pokemonUrl }) {
                   </Col>
                 </Row>
 
-                <Row>
+                <Row className="stats-container">
                   <Col className="text-center" xs={6}>
                     <div>
                       <h4>Stats</h4>
