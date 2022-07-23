@@ -152,6 +152,7 @@ function PokemonCard({ pokemonUrl }) {
                               <span
                                 style={{
                                   background: ColorCard(type.type.name),
+                                  textTransform: 'capitalize',
                                 }}
                                 className="types-modal"
                                 key={type.type.url}

@@ -36,21 +36,19 @@ const Pokemons = () => {
   }, []);
 
   const submit = (e) => {
-    setLoading(true);
     setSearchPokemon(e.target.value);
     search(e.target.value);
-    setTimeout(() => setLoading(), 1200);
   };
 
   const search = (SearchType) => {
-    setLoading(true);
+    // setLoading(true);
     // eslint-disable-next-line array-callback-return
     const resultSearch = pokemonsTable.filter((element) => {
       if (element.name.toString().includes(SearchType.toString())) {
         return element;
       }
     });
-    setTimeout(() => setLoading(), 1200);
+    // setTimeout(() => setLoading(), 1200);
     setPage(1);
     setPokemons(resultSearch);
   };
@@ -105,6 +103,12 @@ const Pokemons = () => {
   const lastPage = () => {
     setLoading(true);
     setPage(totalPages);
+    setTimeout(() => setLoading(), 1200);
+  };
+
+  const onPage = (number) => {
+    setLoading(true);
+    setPage(number);
     setTimeout(() => setLoading(), 1200);
   };
 
@@ -182,7 +186,7 @@ const Pokemons = () => {
                 }`}
                 active={page === number}
                 key={number}
-                onClick={() => setPage(number)}
+                onClick={() => onPage(number)}
               >
                 {number}
               </button>
@@ -249,7 +253,7 @@ const Pokemons = () => {
               }`}
               active={page === number}
               key={number}
-              onClick={() => setPage(number)}
+              onClick={() => onPage(number)}
             >
               {number}
             </button>
