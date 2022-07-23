@@ -122,8 +122,8 @@ function PokemonCard({ pokemonUrl }) {
                     <div>
                       <div className="titleCard">
                         {/* <div className="numberCard">
-                  <h5>#{pokemon.id}</h5>
-                </div> */}
+                          <h5>#{pokemon.id}</h5>
+                        </div> */}
                       </div>
                       <div className="image-modal-container">
                         <img
@@ -137,6 +137,23 @@ function PokemonCard({ pokemonUrl }) {
                           alt=""
                         />
                       </div>
+                      <div className="typeContainer">
+                        <p>
+                          {pokemon.type?.map((type) => {
+                            return (
+                              <span
+                                style={{
+                                  background: ColorCard(type.type.name),
+                                }}
+                                className="types"
+                                key={type.type.url}
+                              >
+                                {type.type.name}
+                              </span>
+                            );
+                          })}
+                        </p>
+                      </div>
                       {/* <div className="nameCard">
                 <h5>{pokemon.name}</h5>
               </div> */}
@@ -145,25 +162,8 @@ function PokemonCard({ pokemonUrl }) {
                 </Row>
 
                 <Row>
-                  <Col>
-                    <h4>Types</h4>
-                    <div className="typeContainer">
-                      <p>
-                        {pokemon.type?.map((type) => {
-                          return (
-                            <span
-                              style={{
-                                background: ColorCard(type.type.name),
-                              }}
-                              className="types"
-                              key={type.type.url}
-                            >
-                              {type.type.name}
-                            </span>
-                          );
-                        })}
-                      </p>
-                    </div>
+                  <Col className="text-center">
+                    <h4>Measures</h4>
                     <p>Height: {pokemon.height}</p>
                     <p>Weight: {pokemon.weight}</p>
                     <div>
@@ -171,7 +171,7 @@ function PokemonCard({ pokemonUrl }) {
                       {pokemon.abilities?.map((ability) => {
                         return (
                           <ul key={ability.ability.url}>
-                            <li className="abilitiyCard">
+                            <li className="abilities">
                               {' '}
                               {ability.ability.name}{' '}
                             </li>
@@ -180,7 +180,7 @@ function PokemonCard({ pokemonUrl }) {
                       })}
                     </div>
                   </Col>
-                  <Col xs={6}>
+                  <Col className="text-center" xs={6}>
                     <h4>Stats</h4>
                     <p>
                       Hp {pokemon.hp}/100

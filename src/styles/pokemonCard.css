@@ -83,7 +83,7 @@ image-modal-container {
 }
 
 .imageShiny-modal {
-  width: 300px;
+  width: 85%;
   position: absolute;
   float: left;
   transition: transform 0.4s;
@@ -95,7 +95,13 @@ image-modal-container {
 }
 
 .imageNormal-modal {
-  width: 300px;
+  width: 91%;
   height: auto;
   min-height: 150px;
+}
+
+.abilities {
+  text-transform: capitalize;
+  list-style: none;
+  margin-right: 25px;
 }
