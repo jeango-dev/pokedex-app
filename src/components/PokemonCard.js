@@ -174,40 +174,40 @@ function PokemonCard({ pokemonUrl }) {
                     </div>
                     <div className="stats">
                       <p>
-                        Hp {pokemon.hp}/100
+                        Hp {pokemon.hp}/255
                         <ProgressBar
                           style={{ height: '25px' }}
                           variant="info"
-                          max="100"
+                          max="255"
                           animated
                           now={pokemon.hp}
                         ></ProgressBar>
                       </p>
                       <p>
-                        Speed {pokemon.speed}/100
+                        Speed {pokemon.speed}/255
                         <ProgressBar
                           style={{ height: '25px' }}
-                          max="100"
+                          max="255"
                           animated
                           now={pokemon.speed}
                         ></ProgressBar>
                       </p>
                       <p>
-                        Attack {pokemon.attack}/100
+                        Attack {pokemon.attack}/255
                         <ProgressBar
                           style={{ height: '25px' }}
                           variant="danger"
-                          max="100"
+                          max="255"
                           animated
                           now={pokemon.attack}
                         ></ProgressBar>
                       </p>
                       <p>
-                        Defense {pokemon.defense}/100
+                        Defense {pokemon.defense}/255
                         <ProgressBar
                           style={{ height: '25px' }}
                           variant="warning"
-                          max="100"
+                          max="255"
                           animated
                           now={pokemon.defense}
                         ></ProgressBar>
