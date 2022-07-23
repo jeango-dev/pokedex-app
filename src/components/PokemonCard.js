@@ -109,7 +109,7 @@ function PokemonCard({ pokemonUrl }) {
                 style={{
                   borderColor: ColorCard(pokemon.typeColor),
                   background: `linear-gradient(to top, white 0%,
-            white 70%, ${ColorCard(pokemon.typeColor)} 70%, ${ColorCard(
+            white 75%, ${ColorCard(pokemon.typeColor)} 75%, ${ColorCard(
                     pokemon.typeColor
                   )} 100%)`,
                 }}
@@ -133,10 +133,6 @@ function PokemonCard({ pokemonUrl }) {
                           alt={''}
                         />
                       </div>
-
-                      {/* <div className="nameCard">
-                <h5>{pokemon.name}</h5>
-              </div> */}
                     </div>
                   </Col>
                 </Row>
