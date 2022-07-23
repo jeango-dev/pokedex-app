@@ -114,7 +114,7 @@ function PokemonCard({ pokemonUrl }) {
                 <div className="btn-close-container">
                   <button
                     type="button"
-                    className="btn-close"
+                    className="btn-close btn-close-white"
                     onClick={handleClose}
                   ></button>
                 </div>
