@@ -119,11 +119,10 @@
 .type-container-modal {
   display: flex;
   justify-content: center;
-  background-color: white;
+  margin-top: 20px;
 }
 
 .types-modal {
-  top: 25px;
   text-transform: capitalize;
   padding: 10px;
   padding-left: 30px;

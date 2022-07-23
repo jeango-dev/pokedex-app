@@ -108,7 +108,7 @@ function PokemonCard({ pokemonUrl }) {
                 style={{
                   borderColor: ColorCard(pokemon.typeColor),
                   background: `linear-gradient(to top, white 0%,
-            white 60%, ${ColorCard(pokemon.typeColor)} 60%, ${ColorCard(
+            white 70%, ${ColorCard(pokemon.typeColor)} 70%, ${ColorCard(
                     pokemon.typeColor
                   )} 100%)`,
                 }}
