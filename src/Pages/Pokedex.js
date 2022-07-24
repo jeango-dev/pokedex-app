@@ -44,7 +44,7 @@ const Pokemons = () => {
   const search = (SearchType) => {
     setLoading(true);
     const resultSearch = pokemonsTable.filter((element) => {
-      if (element.name.toString().includes(SearchType.toString())) {
+      if (element.name.toLowerCase().includes(SearchType.toLowerCase())) {
         return element;
       }
     });
@@ -66,6 +66,8 @@ const Pokemons = () => {
       setTimeout(() => setLoading(), 1200);
     }
   };
+
+  // console.log(pokemons[1].name);
 
   // Pagination
 
