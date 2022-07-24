@@ -58,12 +58,14 @@ const Pokemons = () => {
       setLoading(true);
       axios.get(e.target.value).then((res) => setPokemons(res.data.pokemon));
       setTimeout(() => setLoading(), 1200);
+      setPage(1);
     } else {
       setLoading(true);
       axios
         .get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1126')
         .then((res) => setPokemons(res.data.results));
       setTimeout(() => setLoading(), 1200);
+      setPage(1);
     }
   };
 

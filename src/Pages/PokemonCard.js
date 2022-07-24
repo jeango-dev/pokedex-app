@@ -6,12 +6,12 @@ import { useDispatch } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 import { Row, Col } from 'reactstrap';
 import { ProgressBar } from 'react-bootstrap';
-// import ErrorPokemon from './ErrorPokemon';
+// import ErrorPokemon from '../components/ErrorPokemon';
 
 function PokemonCard({ pokemonUrl }) {
   const [pokemon, setPokemon] = useState({});
   const [show, setShow] = useState(false);
-  // const [error, setError] = useState(true);
+  // const [error, setError] = useState(false);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -244,15 +244,14 @@ function PokemonCard({ pokemonUrl }) {
       </div>
     </div>
   );
-}
 
-//   else {
-//     return (
-//       <div className="pokedex-screen">
-//         <ErrorPokemon />
-//       </div>
-//     );
-//   }
-// }
+  // } else {
+  //   return (
+  //     <div className="pokedex-screen">
+  //       <ErrorPokemon />
+  //     </div>
+  //   );
+  // }
+}
 
 export default PokemonCard;
