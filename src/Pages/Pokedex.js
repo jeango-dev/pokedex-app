@@ -36,6 +36,8 @@ const Pokemons = () => {
     setTimeout(() => setLoading(), 1200);
   }, []);
 
+  // Search Pokemon
+
   const submit = (e) => {
     setSearchPokemon(e.target.value);
     search(e.target.value);
@@ -53,6 +55,8 @@ const Pokemons = () => {
     setPokemons(resultSearch);
   };
 
+  // Filter Types
+
   const filterTypes = (e) => {
     if (e.target.value !== '') {
       setLoading(true);
@@ -68,8 +72,6 @@ const Pokemons = () => {
       setPage(1);
     }
   };
-
-  // console.log(pokemons[1].name);
 
   // Pagination
 
