@@ -8,11 +8,10 @@
 }
 
 .footer-nav {
-  height: 65px;
-
+  height: 63px;
   background-color: #dc3545;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   border-top: 8px solid black;
 }
