@@ -4,6 +4,7 @@
   bottom: 0;
   position: absolute;
   width: 100%;
+  top: 100%;
 }
 
 .footer-nav {
