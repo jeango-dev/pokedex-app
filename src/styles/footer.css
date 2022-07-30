@@ -9,13 +9,7 @@
 
 .footer-nav {
   height: 65px;
-  /* background: -webkit-linear-gradient(
-    top,
-    #fff 46%,
-    #000 46%,
-    #000 55%,
-    #dc3545 53%
-  ); */
+
   background-color: #dc3545;
   position: absolute;
   bottom: 0px;
