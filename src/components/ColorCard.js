@@ -18,7 +18,7 @@ const ColorCard = (type) => {
   } else if (type === 'steel' || type === 9) {
     return '#518b9e';
   } else if (type === 'fire' || type === 10) {
-    return '#f99e4b';
+    return '#e37b2e';
   } else if (type === 'water' || type === 11) {
     return '#4995eb';
   } else if (type === 'grass' || type === 12) {
