@@ -1,8 +1,8 @@
 .pokemonCard {
   display: inline-block;
   height: auto;
-  max-width: 220px;
-  min-width: 220px;
+  width: 220px;
+  min-height: 260px;
   margin: 15px;
   border-radius: 15px;
   box-shadow: 0 0 12px;
