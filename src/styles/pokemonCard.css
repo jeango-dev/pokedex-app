@@ -4,8 +4,8 @@
   width: 220px;
   min-height: 260px;
   margin: 15px;
-  border-radius: 15px;
-  box-shadow: 0 0 12px;
+  border-radius: 10px;
+  /* box-shadow: 0 0 12px; */
   transition: transform 0.5s;
   border: 3px solid;
 }
