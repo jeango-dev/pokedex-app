@@ -1,4 +1,5 @@
 .footer-container {
+  height: 100%;
   display: flex;
   justify-content: center;
   bottom: 0;
@@ -15,7 +16,7 @@
   ); */
   background-color: #dc3545;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
-  border-top: 10px solid black;
+  border-top: 8px solid black;
 }
