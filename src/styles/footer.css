@@ -1,7 +1,8 @@
 .footer-container {
   display: flex;
   justify-content: center;
-  bottom: 0;
+  align-items: center;
+
   position: absolute;
   width: 100%;
   top: 100%;
@@ -10,8 +11,8 @@
 .footer-nav {
   height: 63px;
   background-color: #dc3545;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute; */
+  /* bottom: 0; */
   width: 100%;
   border-top: 8px solid black;
 }
